@@ -1465,6 +1465,11 @@ function startQuiz(mode) {
   
   // create per-session copies of questions and shuffle options
   quizQuestions = qs.map(q => ({ ...q }));
+  // shuffle question order for this session so users can't memorize positions
+  for (let i = quizQuestions.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [quizQuestions[i], quizQuestions[j]] = [quizQuestions[j], quizQuestions[i]];
+  }
   // shuffle options for each question so correct answer moves position
   quizQuestions.forEach(q => {
     const mapped = q.options.map((opt, i) => ({ opt, i }));
