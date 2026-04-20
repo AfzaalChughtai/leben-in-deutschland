@@ -1,0 +1,1677 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#1a1a2e">
+<meta name="description" content="Leben in Deutschland - 310 Fragen & Antworten für NRW">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Leben in DE">
+  <meta property="og:title" content="Leben in Deutschland – NRW 310 Fragen">
+  <meta property="og:description" content="310 official German citizenship test questions with answers and memory tricks for NRW">
+  <meta property="og:type" content="website">
+  <link rel="icon" href="./icon-192.svg" type="image/svg+xml">
+  <link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="icon-192.svg">
+<title>Leben in Deutschland – NRW 310 Fragen</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap');
+
+  :root {
+    --bg: #0d0d1a;
+    --surface: #16162a;
+    --surface2: #1e1e38;
+    --border: rgba(255,255,255,0.08);
+    --accent: #6c63ff;
+    --accent2: #ff6584;
+    --gold: #ffd700;
+    --green: #00d68f;
+    --red: #ff4757;
+    --text: #e8e8ff;
+    --muted: rgba(232,232,255,0.5);
+    --radius: 14px;
+    --card-radius: 20px;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* SPLASH / HOME */
+  #home {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .bg-orb {
+    position: fixed;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .orb1 { width: 400px; height: 400px; background: rgba(108,99,255,0.15); top: -100px; right: -100px; }
+  .orb2 { width: 300px; height: 300px; background: rgba(255,101,132,0.1); bottom: -50px; left: -80px; }
+
+  .home-inner { position: relative; z-index: 1; width: 100%; max-width: 600px; }
+
+  .flag-banner {
+    display: flex;
+    gap: 4px;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+  }
+  .flag-stripe {
+    height: 6px;
+    border-radius: 3px;
+    flex: 1;
+    max-width: 60px;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(108,99,255,0.15);
+    border: 1px solid rgba(108,99,255,0.3);
+    padding: 6px 16px;
+    border-radius: 100px;
+    font-size: 12px;
+    color: #a09bff;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.5rem;
+  }
+  .hero-badge span { font-size: 16px; }
+
+  h1.hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #e8e8ff 0%, #a09bff 50%, #ff6584 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    font-size: 1rem;
+    margin-bottom: 2.5rem;
+    line-height: 1.6;
+  }
+
+  .stats-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 2.5rem;
+  }
+  .stat-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    text-align: center;
+  }
+  .stat-num {
+    font-size: 1.8rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.7rem;
+    color: var(--muted);
+    margin-top: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+
+  .section-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 2rem;
+  }
+
+  .section-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    text-align: left;
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+  }
+  .section-btn:hover {
+    background: var(--surface2);
+    border-color: rgba(108,99,255,0.4);
+    transform: translateX(4px);
+  }
+  .section-btn-info { display: flex; align-items: center; gap: 12px; }
+  .section-icon {
+    width: 40px; height: 40px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .section-name { font-size: 0.9rem; font-weight: 500; }
+  .section-count { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+  .section-progress-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.06);
+    border-radius: 2px;
+    margin-top: 6px;
+    overflow: hidden;
+  }
+  .section-progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 2px;
+    transition: width 0.5s ease;
+  }
+  .section-arrow { color: var(--muted); font-size: 18px; }
+
+  .action-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-primary:hover { background: #5a52e8; transform: translateY(-2px); }
+  .btn-primary:active { transform: translateY(0); }
+
+  .btn-secondary {
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
+  }
+  .btn-secondary:hover { background: var(--surface2); border-color: var(--accent); }
+
+  /* QUIZ VIEW */
+  #quiz {
+    display: none;
+    min-height: 100vh;
+    flex-direction: column;
+    padding: 0;
+  }
+
+  .quiz-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .back-btn {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+    width: 36px; height: 36px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.2s;
+  }
+  .back-btn:hover { color: var(--text); border-color: var(--accent); }
+
+  .quiz-meta { flex: 1; }
+  .quiz-section-name { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+  .quiz-counter { font-size: 0.85rem; font-weight: 600; color: var(--text); }
+
+  .progress-track {
+    position: relative;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+  }
+  .progress-fill {
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    background: linear-gradient(90deg, var(--accent), var(--accent2));
+    transition: width 0.4s ease;
+  }
+
+  .score-pill {
+    background: rgba(108,99,255,0.15);
+    border: 1px solid rgba(108,99,255,0.3);
+    border-radius: 100px;
+    padding: 4px 12px;
+    font-size: 0.8rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #a09bff;
+    flex-shrink: 0;
+  }
+
+  .quiz-body {
+    flex: 1;
+    padding: 1.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .question-num {
+    font-size: 0.75rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+  }
+
+  .question-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .question-text {
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.6;
+    color: var(--text);
+  }
+
+  .options-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+  }
+
+  .option-btn {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.25rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.18s;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    line-height: 1.4;
+  }
+  .option-btn:hover:not([disabled]) {
+    background: var(--surface2);
+    border-color: rgba(108,99,255,0.5);
+    transform: translateX(4px);
+  }
+  .option-btn[disabled] { cursor: default; }
+
+  .option-letter {
+    width: 28px; height: 28px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.06);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    transition: all 0.18s;
+    border: 1px solid var(--border);
+  }
+
+  .option-btn.correct {
+    background: rgba(0,214,143,0.12);
+    border-color: var(--green);
+  }
+  .option-btn.correct .option-letter {
+    background: var(--green);
+    border-color: var(--green);
+    color: #000;
+  }
+  .option-btn.wrong {
+    background: rgba(255,71,87,0.1);
+    border-color: var(--red);
+    opacity: 0.7;
+  }
+  .option-btn.wrong .option-letter {
+    background: var(--red);
+    border-color: var(--red);
+    color: white;
+  }
+  .option-btn.selected-wrong {
+    background: rgba(255,71,87,0.15);
+    border-color: var(--red);
+  }
+  .option-btn.selected-wrong .option-letter {
+    background: var(--red);
+    border-color: var(--red);
+    color: white;
+  }
+
+  .feedback-card {
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    margin-bottom: 1.5rem;
+    display: none;
+  }
+  .feedback-card.show { display: block; animation: fadeIn 0.3s ease; }
+
+  @keyframes fadeIn { from { opacity:0; transform:translateY(8px); } to { opacity:1; transform:translateY(0); } }
+
+  .feedback-card.correct-fb {
+    background: rgba(0,214,143,0.08);
+    border: 1px solid rgba(0,214,143,0.25);
+  }
+  .feedback-card.wrong-fb {
+    background: rgba(255,71,87,0.08);
+    border: 1px solid rgba(255,71,87,0.25);
+  }
+  .feedback-title {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .feedback-title.green { color: var(--green); }
+  .feedback-title.red { color: var(--red); }
+
+  .cheat-box {
+    background: rgba(255,215,0,0.06);
+    border: 1px solid rgba(255,215,0,0.2);
+    border-radius: 10px;
+    padding: 0.75rem 1rem;
+    margin-top: 0.75rem;
+  }
+  .cheat-label {
+    font-size: 0.7rem;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 4px;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .cheat-text {
+    font-size: 0.85rem;
+    color: rgba(255,215,0,0.85);
+    line-height: 1.5;
+  }
+
+  .quiz-actions {
+    display: flex;
+    gap: 10px;
+  }
+  .btn-next {
+    flex: 1;
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: none;
+  }
+  .btn-next.show { display: block; animation: fadeIn 0.3s ease; }
+  .btn-next:hover { background: #5a52e8; }
+
+  .btn-show-cheat {
+    background: rgba(255,215,0,0.1);
+    color: var(--gold);
+    border: 1px solid rgba(255,215,0,0.25);
+    border-radius: var(--radius);
+    padding: 1rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    white-space: nowrap;
+    display: none;
+  }
+  .btn-show-cheat.show { display: block; }
+  .btn-show-cheat:hover { background: rgba(255,215,0,0.15); }
+
+  /* RESULTS */
+  #results {
+    display: none;
+    min-height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1.5rem;
+    text-align: center;
+  }
+
+  .result-emoji { font-size: 4rem; margin-bottom: 1rem; }
+  .result-title { font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem; }
+  .result-sub { color: var(--muted); margin-bottom: 2rem; }
+  .result-score-big {
+    font-size: 5rem;
+    font-weight: 700;
+    font-family: 'JetBrains Mono', monospace;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .result-score-label { color: var(--muted); margin-bottom: 2rem; }
+
+  .result-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin-bottom: 2rem;
+    width: 100%;
+    max-width: 400px;
+  }
+  .result-stat {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem;
+  }
+  .result-stat-num { font-size: 1.5rem; font-weight: 700; font-family: 'JetBrains Mono'; }
+  .result-stat-label { font-size: 0.7rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-top: 4px; }
+
+  .result-actions { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 400px; }
+
+  /* BROWSE VIEW */
+  #browse {
+    display: none;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .browse-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .browse-top {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .browse-search {
+    flex: 1;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0.6rem 1rem;
+    color: var(--text);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .browse-search:focus { border-color: var(--accent); }
+  .browse-search::placeholder { color: var(--muted); }
+
+  .filter-tabs {
+    display: flex;
+    gap: 6px;
+    overflow-x: auto;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+  }
+  .filter-tabs::-webkit-scrollbar { display: none; }
+  .filter-tab {
+    background: transparent;
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 4px 14px;
+    color: var(--muted);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+  }
+  .filter-tab.active {
+    background: var(--accent);
+    border-color: var(--accent);
+    color: white;
+  }
+
+  .browse-list {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .browse-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--card-radius);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .browse-card:hover { background: var(--surface2); border-color: rgba(108,99,255,0.3); }
+  .browse-card-top {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 0.75rem;
+  }
+  .browse-q-num { font-size: 0.7rem; color: var(--muted); font-family: 'JetBrains Mono'; }
+  .browse-section-tag {
+    font-size: 0.65rem;
+    padding: 2px 10px;
+    border-radius: 100px;
+    background: rgba(108,99,255,0.12);
+    color: #a09bff;
+    border: 1px solid rgba(108,99,255,0.2);
+    white-space: nowrap;
+  }
+  .browse-q-text {
+    font-size: 0.9rem;
+    font-weight: 500;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  .browse-answer {
+    display: none;
+    border-top: 1px solid var(--border);
+    padding-top: 0.75rem;
+  }
+  .browse-answer.open { display: block; animation: fadeIn 0.2s ease; }
+  .browse-answer-label { font-size: 0.7rem; color: var(--green); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+  .browse-answer-text { font-size: 0.85rem; color: rgba(0,214,143,0.85); }
+  .browse-cheat-text { font-size: 0.8rem; color: rgba(255,215,0,0.75); margin-top: 6px; }
+  .browse-cheat-label { font-size: 0.7rem; color: var(--gold); margin-top: 8px; margin-bottom: 2px; }
+  .browse-toggle-hint { font-size: 0.75rem; color: var(--muted); text-align: center; }
+
+  /* SETTINGS/INSTALL */
+  .install-banner {
+    background: rgba(108,99,255,0.08);
+    border: 1px solid rgba(108,99,255,0.2);
+    border-radius: var(--radius);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 1.5rem;
+  }
+  .install-icon { font-size: 1.5rem; flex-shrink: 0; }
+  .install-text { flex: 1; font-size: 0.85rem; color: var(--muted); }
+  .install-btn {
+    background: var(--accent);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 6px 14px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+
+  /* LANG TOGGLE */
+  .lang-toggle {
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 3px;
+    gap: 2px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .lang-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 5px 12px;
+    border-radius: 100px;
+    border: none;
+    background: transparent;
+    color: var(--muted);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.78rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+    letter-spacing: 0.04em;
+  }
+  .lang-btn.active {
+    background: var(--accent);
+    color: white;
+  }
+  .lang-btn:not(.active):hover {
+    color: var(--text);
+    background: var(--surface2);
+  }
+  .lang-flag {
+    font-size: 15px;
+    line-height: 1;
+  }
+
+  /* ANIMATIONS */
+  .pulse { animation: pulse 2s infinite; }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.6; }
+  }
+
+  .shake { animation: shake 0.4s; }
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    20% { transform: translateX(-8px); }
+    40% { transform: translateX(8px); }
+    60% { transform: translateX(-6px); }
+    80% { transform: translateX(6px); }
+  }
+
+  .bounce { animation: bounce 0.5s; }
+  @keyframes bounce {
+    0% { transform: scale(1); }
+    40% { transform: scale(1.05); }
+    60% { transform: scale(0.98); }
+    100% { transform: scale(1); }
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 400px) {
+    .stats-row { grid-template-columns: repeat(3, 1fr); }
+    .stat-num { font-size: 1.4rem; }
+    h1.hero-title { font-size: 1.8rem; }
+    .action-btns { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="bg-orb orb1"></div>
+<div class="bg-orb orb2"></div>
+
+
+<!-- LANGUAGE TOGGLE -->
+<div class="lang-toggle" id="lang-toggle">
+  <button class="lang-btn active" id="btn-de" onclick="setLang('de')">
+    <span class="lang-flag">🇩🇪</span> DE
+  </button>
+  <button class="lang-btn" id="btn-en" onclick="setLang('en')">
+    <span class="lang-flag">🇬🇧</span> EN
+  </button>
+</div>
+
+<!-- HOME -->
+<div id="home">
+  <div class="home-inner">
+    <div class="flag-banner">
+      <div class="flag-stripe" style="background:#222"></div>
+      <div class="flag-stripe" style="background:#dd0000"></div>
+      <div class="flag-stripe" style="background:#ffce00"></div>
+    </div>
+
+    <div class="hero-badge"><span>🇩🇪</span> NRW Edition</div>
+    
+    <h1 class="hero-title">Leben in<br>Deutschland</h1>
+    <p class="hero-sub">310 offizielle Prüfungsfragen mit Antworten<br>und Merkhilfen (Cheat Codes) für NRW</p>
+
+    <div id="install-banner" class="install-banner" style="display:none">
+      <div class="install-icon">📲</div>
+      <div class="install-text">Als App installieren für Offline-Zugriff</div>
+      <button class="install-btn" onclick="installApp()">Installieren</button>
+    </div>
+
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-num">310</div>
+        <div class="stat-label">Fragen</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-done">0</div>
+        <div class="stat-label">Gelernt</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num" id="stat-score">–</div>
+        <div class="stat-label">Letzte Note</div>
+      </div>
+    </div>
+
+    <div class="section-list" id="section-list"></div>
+
+    <div class="action-btns">
+      <button class="btn-primary" onclick="startQuiz('all')">
+        🎯 Alle 310 Fragen
+      </button>
+      <button class="btn-secondary" onclick="showBrowse()">
+        📖 Alle durchsuchen
+      </button>
+    </div>
+    <br>
+    <div class="action-btns">
+      <button class="btn-secondary" onclick="startQuiz('wrong')">
+        ❌ Falsche wiederholen
+      </button>
+      <button class="btn-secondary" onclick="startQuiz('random50')">
+        🎲 Zufällig 50
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- QUIZ -->
+<div id="quiz" style="display:none; flex-direction:column;">
+  <div class="quiz-header">
+    <button class="back-btn" onclick="goHome()">←</button>
+    <div class="quiz-meta">
+      <div class="quiz-section-name" id="quiz-section-name">–</div>
+      <div class="quiz-counter" id="quiz-counter">Frage 1 von 310</div>
+    </div>
+    <div class="score-pill" id="score-pill">0 / 0</div>
+  </div>
+  <div class="progress-track">
+    <div class="progress-fill" id="progress-fill" style="width:0%"></div>
+  </div>
+  <div class="quiz-body">
+    <div class="question-num" id="q-num">Frage #1</div>
+    <div class="question-card">
+      <div class="question-text" id="q-text"></div>
+    </div>
+    <div class="options-grid" id="options-grid"></div>
+    <div class="feedback-card" id="feedback-card">
+      <div class="feedback-title" id="feedback-title"></div>
+      <div id="feedback-answer" style="font-size:0.9rem;margin-bottom:0.5rem;"></div>
+      <div class="cheat-box" id="cheat-box" style="display:none">
+        <div class="cheat-label">⚡ Merkhilfe (Cheat Code)</div>
+        <div class="cheat-text" id="cheat-text"></div>
+      </div>
+    </div>
+    <div class="quiz-actions">
+      <button class="btn-show-cheat" id="btn-cheat" onclick="showCheat()">⚡ Merkhilfe</button>
+      <button class="btn-next" id="btn-next" onclick="nextQuestion()">Weiter →</button>
+    </div>
+  </div>
+</div>
+
+<!-- RESULTS -->
+<div id="results" style="display:none; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:2rem;">
+  <div class="result-emoji" id="result-emoji">🎉</div>
+  <div class="result-title" id="result-title">Gut gemacht!</div>
+  <div class="result-sub" id="result-sub">Dein Ergebnis:</div>
+  <div class="result-score-big" id="result-pct">85%</div>
+  <div class="result-score-label" id="result-label">Bestanden!</div>
+  <div class="result-grid">
+    <div class="result-stat">
+      <div class="result-stat-num" style="color:var(--green)" id="r-correct">0</div>
+      <div class="result-stat-label">Richtig</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-stat-num" style="color:var(--red)" id="r-wrong">0</div>
+      <div class="result-stat-label">Falsch</div>
+    </div>
+    <div class="result-stat">
+      <div class="result-stat-num" id="r-total">0</div>
+      <div class="result-stat-label">Gesamt</div>
+    </div>
+  </div>
+  <div class="result-actions">
+    <button class="btn-primary" onclick="goHome()">🏠 Zurück zum Start</button>
+    <button class="btn-secondary" onclick="retryWrong()">❌ Falsche wiederholen</button>
+    <button class="btn-secondary" onclick="startQuiz('all')">🔄 Nochmal alle</button>
+  </div>
+</div>
+
+<!-- BROWSE -->
+<div id="browse" style="display:none; flex-direction:column; min-height:100vh;">
+  <div class="browse-header">
+    <div class="browse-top">
+      <button class="back-btn" onclick="goHome()">←</button>
+      <input class="browse-search" id="browse-search" type="text" placeholder="Frage suchen..." oninput="filterBrowse()">
+    </div>
+    <div class="filter-tabs" id="filter-tabs"></div>
+  </div>
+  <div class="browse-list" id="browse-list"></div>
+</div>
+
+
+<script>
+const ALL_QUESTIONS = [
+// ===== SECTION 1: LEBEN IN DER DEMOKRATIE (1-50) =====
+{id:1,section:"Leben in der Demokratie",q:"In Deutschland dürfen die Menschen frei ihre Meinung sagen. Dies ist im Grundgesetz festgelegt als...",options:["Redefreiheit","Meinungsfreiheit","Informationsfreiheit","Pressefreiheit"],answer:1,cheat:"MEINung = MEINungsfreiheit – du darfst DEINE Meinung sagen"},
+{id:2,section:"Leben in der Demokratie",q:"In Deutschland können Bürgerinnen und Bürger einen Politiker wählen. Wie oft wird der Deutsche Bundestag gewählt?",options:["Alle 4 Jahre","Alle 5 Jahre","Alle 6 Jahre","Alle 3 Jahre"],answer:0,cheat:"4 Jahre = 4 Buchstaben in 'Wahl' — merke: Bundestag alle 4!"},
+{id:3,section:"Leben in der Demokratie",q:"In Deutschland gibt es das Grundgesetz. Was ist das Grundgesetz?",options:["Ein Gesetz über den Grundbesitz","Die Verfassung der Bundesrepublik Deutschland","Ein Gesetz über die Grundschule","Ein Gesetz über das Grundeinkommen"],answer:1,cheat:"GRUND-Gesetz = Grund-LAGE aller Gesetze = die Verfassung"},
+{id:4,section:"Leben in der Demokratie",q:"Welches Grundrecht gilt in Deutschland?",options:["Recht auf Arbeit","Recht auf Bildung","Meinungsfreiheit","Recht auf Wohnung"],answer:2,cheat:"Nur Meinungsfreiheit steht im Grundgesetz Art. 5 — die anderen nicht!"},
+{id:5,section:"Leben in der Demokratie",q:"Was versteht man in Deutschland unter dem Prinzip der Gewaltenteilung?",options:["Verbot von Gewalt im Alltag","Trennung von gesetzgebender, vollziehender und richterlicher Gewalt","Aufteilung der Polizeigewalt","Trennung von Militär und Polizei"],answer:1,cheat:"3 Gewalten: Legislative (macht Gesetze), Exekutive (führt aus), Judikative (richtet)"},
+{id:6,section:"Leben in der Demokratie",q:"In Deutschland ist die Würde des Menschen...",options:["durch den Staat zu schützen","nicht durch Gesetze geregelt","abhängig vom sozialen Status","nur für deutsche Staatsbürger garantiert"],answer:0,cheat:"Art. 1 GG: 'Die Würde des Menschen ist UNANTASTBAR' — der Staat MUSS sie schützen"},
+{id:7,section:"Leben in der Demokratie",q:"Was bedeutet Pressefreiheit in Deutschland?",options:["Zeitungen müssen kostenlos sein","Journalisten dürfen frei und unzensiert berichten","Die Presse wird vom Staat finanziert","Nur staatliche Medien sind erlaubt"],answer:1,cheat:"FREI-heit = keine Zensur, FREI berichten — merke: freie Presse = freie Demokratie"},
+{id:8,section:"Leben in der Demokratie",q:"In Deutschland darf man wählen, wenn man...",options:["das 16. Lebensjahr vollendet hat","das 18. Lebensjahr vollendet hat","das 21. Lebensjahr vollendet hat","das 25. Lebensjahr vollendet hat"],answer:1,cheat:"18 = Volljährigkeit = Wahlrecht — 18 ist die magische Zahl!"},
+{id:9,section:"Leben in der Demokratie",q:"Was ist das Ziel der Demokratie in Deutschland?",options:["Die Herrschaft einer Partei","Die Beteiligung aller Bürger an politischen Entscheidungen","Die Herrschaft des Militärs","Die Herrschaft der Reichen"],answer:1,cheat:"Demo-kratie = griech. 'demos' (Volk) + 'kratein' (herrschen) = Volksherrschaft"},
+{id:10,section:"Leben in der Demokratie",q:"In Deutschland gibt es das Recht auf Asyl. Wer hat in Deutschland Anspruch auf Asyl?",options:["Alle Ausländer","Politisch Verfolgte","Alle Armen","Alle Arbeitslosen"],answer:1,cheat:"ASYL = Schutz vor POLITISCHER Verfolgung — Art. 16a GG"},
+{id:11,section:"Leben in der Demokratie",q:"Was ist der Bundesrat in Deutschland?",options:["Das deutsche Parlament","Die Vertretung der Länder auf Bundesebene","Die Regierung des Bundes","Das höchste Gericht"],answer:1,cheat:"Bundes-RAT = die LÄNDER raten/beraten den Bund — LÄNDER-vertretung"},
+{id:12,section:"Leben in der Demokratie",q:"Welches Organ verabschiedet in Deutschland die Bundesgesetze?",options:["Der Bundesrat","Der Bundestag","Die Bundesregierung","Das Bundesverfassungsgericht"],answer:1,cheat:"Bundes-TAG = TAGS über Gesetze diskutieren — der TAG macht die Gesetze!"},
+{id:13,section:"Leben in der Demokratie",q:"Wer ist in Deutschland das Staatsoberhaupt?",options:["Der Bundeskanzler","Der Bundespräsident","Der Bundestagspräsident","Der Bundesratspräsident"],answer:1,cheat:"PRÄSIDENT = oberster REPRÄSENTANT = Staatsoberhaupt — nicht der Kanzler!"},
+{id:14,section:"Leben in der Demokratie",q:"Wie wird der Bundespräsident in Deutschland gewählt?",options:["Direkt vom Volk","Von der Bundesversammlung","Vom Bundestag","Vom Bundesrat"],answer:1,cheat:"Bundes-VERSAMMLUNG = spezielle Versammlung nur für diesen Zweck — nicht direkt!"},
+{id:15,section:"Leben in der Demokratie",q:"In Deutschland gibt es das Bundesverfassungsgericht. Was ist seine Aufgabe?",options:["Strafurteile zu sprechen","Die Verfassung zu schützen und auszulegen","Gesetze zu beschließen","Die Regierung zu kontrollieren"],answer:1,cheat:"VERFASSUNGsgericht = schützt die VERFASSUNG — der Hüter des Grundgesetzes"},
+{id:16,section:"Leben in der Demokratie",q:"Was versteht man unter dem Sozialstaatsprinzip in Deutschland?",options:["Alle sollen gleich viel verdienen","Der Staat sorgt für soziale Gerechtigkeit und Sicherheit","Sozialismus als Wirtschaftssystem","Abschaffung des Privateigentums"],answer:1,cheat:"SOZIAL = füreinander sorgen — der Staat hilft Schwächeren"},
+{id:17,section:"Leben in der Demokratie",q:"Was ist das Grundgesetz nicht?",options:["Die Verfassung Deutschlands","Ein Gesetz höchster Ordnung","Änderbar durch einfache Mehrheit","Grundlage für alle anderen Gesetze"],answer:2,cheat:"GG braucht 2/3 Mehrheit zum Ändern — NICHT einfache Mehrheit!"},
+{id:18,section:"Leben in der Demokratie",q:"In Deutschland hat jeder Mensch das Recht auf...",options:["ein kostenloses Haus","freie Entfaltung der Persönlichkeit","einen Arbeitsplatz","ein Grundeinkommen"],answer:1,cheat:"Art. 2 GG: freie ENTFALTUNG der Persönlichkeit — du darfst du selbst sein!"},
+{id:19,section:"Leben in der Demokratie",q:"Was bedeutet Religionsfreiheit in Deutschland?",options:["Nur christliche Religionen sind erlaubt","Jeder darf seine Religion frei wählen und ausüben","Religion ist verboten","Der Staat bestimmt die Religion"],answer:1,cheat:"FREI-heit = FREI wählen — jede Religion erlaubt, keine Zwangsreligion"},
+{id:20,section:"Leben in der Demokratie",q:"Was ist in Deutschland nicht erlaubt?",options:["Eine eigene Meinung zu haben","Gegen die Regierung zu demonstrieren","Den Bundestag abzuschaffen","Friedlich zu streiken"],answer:2,cheat:"Art. 79 GG: Ewigkeitsklausel — Demokratie und Grundrechte dürfen NICHT abgeschafft werden"},
+{id:21,section:"Leben in der Demokratie",q:"Was ist ein Kennzeichen der Demokratie in Deutschland?",options:["Eine einzige Regierungspartei","Freie, gleiche und geheime Wahlen","Wahlen alle 10 Jahre","Wahlrecht nur für Männer"],answer:1,cheat:"FGG-Wahlen: FREI + GLEICH + GEHEIM — die 3 goldenen Wahlprinzipien"},
+{id:22,section:"Leben in der Demokratie",q:"Was darf die Polizei in Deutschland?",options:["Menschen ohne Grund festnehmen","Menschen bei konkretem Verdacht festnehmen","Menschen unbegrenzt einsperren","Menschen ohne Haftbefehl dauerhaft inhaftieren"],answer:1,cheat:"KONKRETER Verdacht nötig — Polizei braucht einen Grund, nicht einfach so!"},
+{id:23,section:"Leben in der Demokratie",q:"In Deutschland gilt das Prinzip der Unschuldsvermutung. Was bedeutet das?",options:["Alle sind immer unschuldig","Jeder gilt als unschuldig, bis seine Schuld bewiesen ist","Geständnisse werden nicht akzeptiert","Richter dürfen keine Urteile sprechen"],answer:1,cheat:"UN-SCHULD-svermutung = erstmal UNSCHULDIG — Schuld muss BEWIESEN werden"},
+{id:24,section:"Leben in der Demokratie",q:"Was ist die Aufgabe des Bundestagsabgeordneten?",options:["Gesetze ausführen","Das Volk im Parlament vertreten und Gesetze beschließen","Urteile sprechen","Die Regierung führen"],answer:1,cheat:"Ab-GEORDNET vom Volk = VERTRETer des Volkes im Bundestag"},
+{id:25,section:"Leben in der Demokratie",q:"Wie nennt man das System in Deutschland, bei dem die Regierung dem Parlament verantwortlich ist?",options:["Präsidialdemokratie","Parlamentarische Demokratie","Direkte Demokratie","Monarchie"],answer:1,cheat:"PARLAMENTARISCHE Demo = Regierung ist dem PARLAMENT verantwortlich — Bundestag wählt Kanzler"},
+{id:26,section:"Leben in der Demokratie",q:"Was ist Aufgabe der Opposition im deutschen Parlament?",options:["Die Regierung zu unterstützen","Die Regierung zu kontrollieren und zu kritisieren","Gesetze zu schreiben","Den Bundespräsidenten zu wählen"],answer:1,cheat:"OPPO-sition = GEGEN die Regierung stehen — kontrolliert und kritisiert"},
+{id:27,section:"Leben in der Demokratie",q:"Was versteht man unter dem Rechtsstaatsprinzip?",options:["Nur Juristen regieren","Alle Menschen und der Staat sind an das Recht gebunden","Das Recht des Stärkeren gilt","Gesetze gelten nur für Bürger"],answer:1,cheat:"RECHT-sstaat = ALLE (auch der Staat) müssen sich ans Recht halten"},
+{id:28,section:"Leben in der Demokratie",q:"Was ist das Ziel der Bundesregierung?",options:["Gesetze zu verabschieden","Deutschland zu regieren und die Gesetze auszuführen","Urteile zu sprechen","Die Verfassung zu ändern"],answer:1,cheat:"Regierung = REGIERT = führt aus, was der Bundestag beschlossen hat"},
+{id:29,section:"Leben in der Demokratie",q:"Wie viele Bundesländer hat Deutschland?",options:["14","15","16","17"],answer:2,cheat:"16 Länder — merke: 16 = 1+6 = 7, wie die 7 Bundesländer im Wappen... nein! Einfach 16 merken!"},
+{id:30,section:"Leben in der Demokratie",q:"Was ist das Bundesverfassungsgericht in Karlsruhe?",options:["Das höchste Gericht Deutschlands","Ein normales Landgericht","Ein Verwaltungsgericht","Ein Finanzgericht"],answer:0,cheat:"BUNDESVERFASSUNGS-gericht = höchstes Gericht im GANZEN Bund — in Karlsruhe"},
+{id:31,section:"Leben in der Demokratie",q:"Was schützt in Deutschland die Menschenwürde?",options:["Das Bürgerliche Gesetzbuch","Das Grundgesetz","Das Strafgesetzbuch","Das Handelsgesetzbuch"],answer:1,cheat:"GRUNDGESETZ Art. 1: Menschenwürde ist UNANTASTBAR — das Wichtigste im GG"},
+{id:32,section:"Leben in der Demokratie",q:"Welche Staatsform hat Deutschland?",options:["Monarchie","Republik","Theokratie","Oligarchie"],answer:1,cheat:"Bundes-REPUBLIK Deutschland — BRD = Bundes-REPUBLIK"},
+{id:33,section:"Leben in der Demokratie",q:"Was versteht man unter dem Föderalismus in Deutschland?",options:["Zentralstaat mit starker Bundesregierung","Aufteilung der Macht zwischen Bund und Ländern","Herrschaft einer einzigen Partei","Direkte Demokratie"],answer:1,cheat:"FÖDER = lat. 'foedus' (Bund) — Macht ist auf Bund UND Länder verteilt"},
+{id:34,section:"Leben in der Demokratie",q:"Wer wählt in Deutschland den Bundeskanzler?",options:["Das Volk direkt","Der Bundestag","Der Bundespräsident","Der Bundesrat"],answer:1,cheat:"Bundes-TAG wählt den Bundes-KANZLER — merke: T wählt K"},
+{id:35,section:"Leben in der Demokratie",q:"Was ist das Petitionsrecht in Deutschland?",options:["Das Recht zu beten","Das Recht, sich mit Bitten an den Staat zu wenden","Das Recht auf eine Petition gegen Steuern","Das Recht auf kostenlose Rechtsberatung"],answer:1,cheat:"PETITION = lat. 'petitio' (Bitte) — du darfst den Staat um etwas BITTEN"},
+{id:36,section:"Leben in der Demokratie",q:"Was bedeutet das aktive Wahlrecht in Deutschland?",options:["Das Recht, gewählt zu werden","Das Recht, zu wählen","Das Recht, Parteien zu gründen","Das Recht, Gesetze vorzuschlagen"],answer:1,cheat:"AKTIV wählen = selbst wählen gehen — aktiv = handeln = wählen"},
+{id:37,section:"Leben in der Demokratie",q:"Was bedeutet das passive Wahlrecht?",options:["Das Recht, nicht wählen zu müssen","Das Recht, gewählt zu werden","Das Recht auf Briefwahl","Das Recht auf mehrfaches Wählen"],answer:1,cheat:"PASSIV = du bist das ZIEL — andere wählen DICH — gewählt werden"},
+{id:38,section:"Leben in der Demokratie",q:"Was ist der Unterschied zwischen Bund und Ländern?",options:["Es gibt keinen Unterschied","Der Bund ist zuständig für gesamtnationale, die Länder für regionale Aufgaben","Die Länder sind mächtiger","Der Bund hat keine eigenen Aufgaben"],answer:1,cheat:"BUND = gesamtes Deutschland (z.B. Außenpolitik), LÄNDER = regional (z.B. Bildung)"},
+{id:39,section:"Leben in der Demokratie",q:"Was ist die Aufgabe des Bundesrates?",options:["Gesetze allein zu beschließen","Die Interessen der Länder auf Bundesebene zu vertreten","Den Bundespräsidenten zu kontrollieren","Urteile zu sprechen"],answer:1,cheat:"Bundes-RAT = LÄNDER im Rat = Länder VERTRETEN ihre Interessen beim Bund"},
+{id:40,section:"Leben in der Demokratie",q:"Was ist das Grundprinzip der sozialen Marktwirtschaft?",options:["Freier Markt ohne staatliche Eingriffe","Kombination aus freiem Markt und sozialer Absicherung","Vollständige Staatswirtschaft","Planwirtschaft"],answer:1,cheat:"SOZIALE Marktwirtschaft = Markt + SOZIALER Schutz — das Beste aus beiden Welten"},
+{id:41,section:"Leben in der Demokratie",q:"Was versteht man unter Volkssouveränität?",options:["Der Fürst hat die höchste Macht","Alle Staatsgewalt geht vom Volke aus","Experten regieren","Das Militär hat die Macht"],answer:1,cheat:"VOLKS-souveränität = das VOLK ist der Chef — Art. 20 GG: 'Alle Staatsgewalt geht vom Volke aus'"},
+{id:42,section:"Leben in der Demokratie",q:"Was ist ein Merkmal des deutschen Rechtssystems?",options:["Richter folgen Anweisungen der Regierung","Richter sind unabhängig und nur dem Gesetz verpflichtet","Richter werden vom Volk gewählt","Richter werden vom Kanzler bestimmt"],answer:1,cheat:"Richter-UNABHÄNGIGKEIT = kein Politiker darf Richtern sagen, was sie entscheiden sollen"},
+{id:43,section:"Leben in der Demokratie",q:"Was ist Aufgabe der Bundesregierung?",options:["Gesetze beschließen","Urteile sprechen","Deutschland regieren und Gesetze ausführen","Die Verfassung ändern"],answer:2,cheat:"Regierung = REGIERT = Exekutive = führt Gesetze AUS (macht sie aber nicht)"},
+{id:44,section:"Leben in der Demokratie",q:"Was ist in Deutschland verboten?",options:["Politische Parteien zu gründen","Verfassungswidrige Parteien","Streiks","Demonstrationen"],answer:1,cheat:"VERFASSUNGSWIDRIG = gegen die Verfassung = VERBOTEN — das BVerfG kann sie verbieten"},
+{id:45,section:"Leben in der Demokratie",q:"Was schützt in Deutschland das Briefgeheimnis?",options:["Den Staat vor Spionage","Die private Kommunikation der Bürger","Die Geheimnisse der Regierung","Militärische Informationen"],answer:1,cheat:"BRIEF-geheimnis = deine Briefe sind GEHEIM — niemand darf sie heimlich lesen (Art. 10 GG)"},
+{id:46,section:"Leben in der Demokratie",q:"Wie nennt man die Zusammenarbeit von Bundesregierung und Bundesrat?",options:["Partnerschaft","Koalition","Föderalismus","Kollegium"],answer:2,cheat:"FÖDERALISMUS = Bund + Länder arbeiten ZUSAMMEN — das ist der Kern des Föderalismus"},
+{id:47,section:"Leben in der Demokratie",q:"Was ist das Wahlgeheimnis in Deutschland?",options:["Wahlen finden geheim statt","Niemand darf erfahren, wen man gewählt hat","Wähler müssen anonym bleiben","Alle genannten"],answer:3,cheat:"GEHEIME Wahl = ALLES: geheimer Ort, geheimer Stimmzettel, niemand weiß was du wählst"},
+{id:48,section:"Leben in der Demokratie",q:"Was ist die Bundeswehr?",options:["Die Polizei Deutschlands","Die Streitkräfte Deutschlands","Der Geheimdienst Deutschlands","Die Grenzpolizei Deutschlands"],answer:1,cheat:"Bundes-WEHR = wehrt Deutschland = STREITKRÄFTE (Armee)"},
+{id:49,section:"Leben in der Demokratie",q:"Wann wurde das Grundgesetz in Deutschland in Kraft gesetzt?",options:["1945","1948","1949","1950"],answer:2,cheat:"1949 = vier-neun = GG zum neuen Anfang NACH dem Krieg (1945) — 4 Jahre später"},
+{id:50,section:"Leben in der Demokratie",q:"Was ist das Bundesverfassungsgericht berechtigt zu tun?",options:["Gesetze zu beschließen","Gesetze für verfassungswidrig zu erklären","Die Regierung abzusetzen","Den Bundestag aufzulösen"],answer:1,cheat:"BVerfG = VERFASSUNGSRICHTER — kann Gesetze die dem GG widersprechen KIPPEN"},
+
+// ===== SECTION 2: GESCHICHTE UND VERANTWORTUNG (51-100) =====
+{id:51,section:"Geschichte und Verantwortung",q:"Was war der Nationalsozialismus?",options:["Eine demokratische Partei","Eine totalitäre Diktatur unter Adolf Hitler","Eine kommunistische Bewegung","Eine religiöse Bewegung"],answer:1,cheat:"NAZI = National-SOZIALISMUS = DIKTATUR unter Hitler — keine Demokratie!"},
+{id:52,section:"Geschichte und Verantwortung",q:"Wann begann der Zweite Weltkrieg?",options:["1933","1935","1939","1941"],answer:2,cheat:"1939 = 39 = drei-neun = Deutschland GRIFF Polen AN am 1.9.1939"},
+{id:53,section:"Geschichte und Verantwortung",q:"Was war der Holocaust?",options:["Ein Kriegseinsatz","Der systematische Mord an Millionen Juden und anderen Gruppen","Eine Wirtschaftskrise","Ein politischer Putsch"],answer:1,cheat:"Holocaust = griech. 'holos' (ganz) + 'kaustos' (verbrannt) = systematische VERNICHTUNG von 6 Mio. Juden"},
+{id:54,section:"Geschichte und Verantwortung",q:"Wann endete der Zweite Weltkrieg in Europa?",options:["1944","1945","1946","1947"],answer:1,cheat:"1945 = NEUN-FÜNF = VE-Day 8. Mai 1945 — Deutschland kapitulierte"},
+{id:55,section:"Geschichte und Verantwortung",q:"Wann wurde die Berliner Mauer gebaut?",options:["1955","1961","1968","1972"],answer:1,cheat:"1961 = SECHZIG-EIN = 13. August 1961 — Mauer GEBAUT, DDR schließt Grenze"},
+{id:56,section:"Geschichte und Verantwortung",q:"Wann fiel die Berliner Mauer?",options:["1985","1987","1989","1991"],answer:2,cheat:"1989 = NEUN-NEUN = 9. November 1989 — NEUN-NEUN = Mauerfall!"},
+{id:57,section:"Geschichte und Verantwortung",q:"Wann wurde Deutschland wiedervereinigt?",options:["1989","1990","1991","1992"],answer:1,cheat:"1990 = ein Jahr NACH Mauerfall (1989) — Deutschland wurde am 3. Oktober 1990 eins"},
+{id:58,section:"Geschichte und Verantwortung",q:"Was war die DDR?",options:["Ein westdeutsches Bundesland","Die Deutsche Demokratische Republik – ein sozialistischer Staat","Eine österreichische Region","Eine Schweizer Region"],answer:1,cheat:"DDR = Deutsche Demokratische REPUBLIK — ironisch: war keine echte Demokratie (Ostdeutschland)"},
+{id:59,section:"Geschichte und Verantwortung",q:"Was war die Weimarer Republik?",options:["Eine Stadt in Thüringen","Deutschlands erste demokratische Republik (1919–1933)","Ein Kaiserreich","Ein Bundesland"],answer:1,cheat:"WEIMAR = Stadt wo Verfassung 1919 beschlossen — erste deutsche DEMOKRATIE"},
+{id:60,section:"Geschichte und Verantwortung",q:"Was bedeutet der 8. Mai für Deutschland?",options:["Tag der deutschen Einheit","Tag der Befreiung vom Nationalsozialismus","Gründung der Bundesrepublik","Beginn des Ersten Weltkriegs"],answer:1,cheat:"8. Mai 1945 = Deutschland kapituliert = BEFREIUNG vom NS — Kriegsende in Europa"},
+{id:61,section:"Geschichte und Verantwortung",q:"Was war Auschwitz?",options:["Ein deutsches Unternehmen","Das größte nationalsozialistische Konzentrations- und Vernichtungslager","Eine Stadt in Österreich","Ein Kriegsgefangenenlager für Deutsche"],answer:1,cheat:"AUSCHWITZ = Symbol des Holocaust — größtes KZ in Polen, 1,1 Mio. Menschen ermordet"},
+{id:62,section:"Geschichte und Verantwortung",q:"Was war die Kristallnacht (Reichspogromnacht)?",options:["Ein Feiertag","Pogrome gegen Juden am 9./10. November 1938","Ein Aufstand gegen Hitler","Eine Wirtschaftskrise"],answer:1,cheat:"9. November 1938 = NEUN-NOVEMBER = Synagogen brannten, Juden wurden angegriffen"},
+{id:63,section:"Geschichte und Verantwortung",q:"Was war der Marshall-Plan?",options:["Ein Militäreinsatz","Ein US-amerikanisches Hilfsprogramm für den Wiederaufbau Europas","Ein sowjetisches Wirtschaftsprogramm","Ein deutsches Industrieprogramm"],answer:1,cheat:"MARSHALL = US-General Marshall — Amerika half Europa nach WWII mit Geld"},
+{id:64,section:"Geschichte und Verantwortung",q:"Was war die NATO?",options:["Ein europäischer Wirtschaftsblock","Ein westliches Militärbündnis gegründet 1949","Eine kommunistische Organisation","Ein Handelsabkommen"],answer:1,cheat:"NATO 1949 = Nord-Atlantik-TREATY-Organisation — westliches MILITÄR-bündnis"},
+{id:65,section:"Geschichte und Verantwortung",q:"Was versteht man unter dem Wirtschaftswunder in Deutschland?",options:["Ein Glücksspiel","Der schnelle wirtschaftliche Aufstieg Westdeutschlands nach 1945","Eine Naturkatastrophe","Ein technisches Wunder"],answer:1,cheat:"WIRTSCHAFTS-wunder = Deutschlands super schneller Wiederaufstieg nach dem totalen Ruin 1945"},
+{id:66,section:"Geschichte und Verantwortung",q:"Was war der Kalte Krieg?",options:["Ein echter Krieg zwischen USA und UdSSR","Ein ideologischer Konflikt zwischen USA und Sowjetunion","Ein Wirtschaftsstreit","Ein Klimaphänomen"],answer:1,cheat:"KALT = kein echter Schusswechsel, aber IDEOLOGISCHER Krieg: Demokratie vs. Kommunismus"},
+{id:67,section:"Geschichte und Verantwortung",q:"Wann wurde die Bundesrepublik Deutschland gegründet?",options:["1945","1947","1949","1950"],answer:2,cheat:"1949 = GG + BRD gegründet — gleiches Jahr wie Grundgesetz!"},
+{id:68,section:"Geschichte und Verantwortung",q:"Was war der Nürnberger Prozess?",options:["Ein Sportturnier","Die Verurteilung der NS-Kriegsverbrecher nach 1945","Ein Wirtschaftsprozess","Ein Handelsstreit"],answer:1,cheat:"NÜRNBERG 1945-46 = Alliierte klagten NS-TÄTER an — Gerechtigkeit nach dem Krieg"},
+{id:69,section:"Geschichte und Verantwortung",q:"Was bedeutet der 3. Oktober für Deutschland?",options:["Tag der Arbeit","Tag der deutschen Einheit","Geburtstag des Grundgesetzes","Mauerfall"],answer:1,cheat:"3. Oktober 1990 = Tag der deutschen EINHEIT — Nationalfeiertag!"},
+{id:70,section:"Geschichte und Verantwortung",q:"Was war die Stasi?",options:["Die Polizei Westdeutschlands","Der Geheimdienst der DDR","Ein DDR-Sportverein","Eine DDR-Gewerkschaft"],answer:1,cheat:"STASI = STAatsSIcherheit = DDR-Geheimdienst — spionierte die eigene Bevölkerung aus"},
+{id:71,section:"Geschichte und Verantwortung",q:"Was war der Einigungsvertrag?",options:["Ein Handelsvertrag","Das Dokument zur Wiedervereinigung Deutschlands 1990","Ein Militärbündnis","Ein Friedensvertrag mit der Sowjetunion"],answer:1,cheat:"EINIGUNG = Deutschland wird EINS — Vertrag 31. August 1990 unterschrieben"},
+{id:72,section:"Geschichte und Verantwortung",q:"Was ist der Unterschied zwischen BRD und DDR?",options:["Keiner","BRD war westliche Demokratie, DDR sozialistischer Oststaat","DDR war wohlhabender","BRD war kommunistisch"],answer:1,cheat:"BRD = WEST (Bonn/Berlin, frei), DDR = OST (Berlin, sozialistisch) — Teilung 1949-1990"},
+{id:73,section:"Geschichte und Verantwortung",q:"Was bedeutet Antisemitismus?",options:["Begeisterung für semitische Sprachen","Feindseligkeit gegenüber Juden","Kritik an der Politik Israels","Religiöser Fundamentalismus"],answer:1,cheat:"ANTI = gegen, SEMIT = Jude — Judenhass, der zur Nazi-Ideologie gehörte"},
+{id:74,section:"Geschichte und Verantwortung",q:"Was war die Résistance?",options:["Ein deutsches Militäreinsatz","Widerstandsbewegungen in besetzten Ländern gegen die Nazis","Eine französische politische Partei","Ein Wirtschaftsprogramm"],answer:1,cheat:"RÉSISTANCE = franz. 'Widerstand' — Kämpfer gegen Nazi-Besatzung in Frankreich"},
+{id:75,section:"Geschichte und Verantwortung",q:"Warum ist das Gedenken an den Holocaust wichtig?",options:["Aus touristischen Gründen","Um sicherzustellen, dass solche Verbrechen nie wieder geschehen","Für wirtschaftliche Reparationen","Nur für Historiker"],answer:1,cheat:"'NIE WIEDER!' = Deutschland's Verantwortung — Erinnern schützt vor Wiederholung"},
+{id:76,section:"Geschichte und Verantwortung",q:"Was war die Reichspogromnacht?",options:["Ein Feiertag in der Weimarer Republik","Organisierte Gewalt gegen Juden im November 1938","Ein Arbeiteraufstand","Eine Naturkatastrophe"],answer:1,cheat:"9./10. November 1938 = Pogrom (=Ausschreitungen) gegen JUDEN — Synagogen brannten"},
+{id:77,section:"Geschichte und Verantwortung",q:"Was war das KZ?",options:["Ein Krankenhaus","Konzentrationslager – Orte der Inhaftierung und Vernichtung","Ein Kinderheim","Ein Ausbildungszentrum"],answer:1,cheat:"KZ = KonzentrationsZager — Gefängnis + Vernichtungsort der Nazis"},
+{id:78,section:"Geschichte und Verantwortung",q:"Wann wurde Hitler Reichskanzler?",options:["1932","1933","1934","1935"],answer:1,cheat:"1933 = DREIUNDDREISSIG = 30. Januar 1933 — Hitlers MACHTÜBERNAHME"},
+{id:79,section:"Geschichte und Verantwortung",q:"Was war der Versailler Vertrag?",options:["Ein Friedensvertrag nach dem Ersten Weltkrieg","Ein Wirtschaftsvertrag","Ein Militärbündnis","Ein Handelsvertrag nach dem Zweiten Weltkrieg"],answer:0,cheat:"VERSAILLES 1919 = nach WWI — Deutschland musste zahlen, was Hitler ausnutzte"},
+{id:80,section:"Geschichte und Verantwortung",q:"Was war die Weimarer Verfassung?",options:["Die aktuelle deutsche Verfassung","Die erste demokratische Verfassung Deutschlands (1919)","Die NS-Verfassung","Die DDR-Verfassung"],answer:1,cheat:"WEIMAR 1919 = erste demokratische Verfassung — später vom Grundgesetz (1949) abgelöst"},
+{id:81,section:"Geschichte und Verantwortung",q:"Was ist das besondere an Artikel 1 des Grundgesetzes?",options:["Er kann geändert werden","Er ist unveränderlich und schützt die Menschenwürde","Er regelt das Wahlrecht","Er beschreibt die Bundesländer"],answer:1,cheat:"Art. 1 = EWIG unveränderlich = 'Die Würde des Menschen ist unantastbar' — der Kern"},
+{id:82,section:"Geschichte und Verantwortung",q:"Was versteht man unter 'Vergangenheitsbewältigung' in Deutschland?",options:["Geschichte vergessen","Kritische Auseinandersetzung mit der NS-Vergangenheit","Reparationszahlungen","Aufbau von Museen"],answer:1,cheat:"BEWÄLTIGUNG = aktiv DAMIT UMGEHEN — nicht verdrängen, sondern aufarbeiten"},
+{id:83,section:"Geschichte und Verantwortung",q:"Was bedeutet der Begriff 'Entnazifizierung'?",options:["Entfernung aller Deutschen aus öffentlichen Ämtern","Prozess zur Beseitigung nationalsozialistischen Einflusses nach 1945","Ein Wirtschaftsprogramm","Militärische Entwaffnung"],answer:1,cheat:"ENT-NAZIFIZIERUNG = Nazis ENTfernen aus öffentlichen Stellen nach 1945"},
+{id:84,section:"Geschichte und Verantwortung",q:"Was war der Plan der Alliierten nach dem Zweiten Weltkrieg für Deutschland?",options:["Deutschland zu teilen und zu besetzen","Deutschland sofort als Demokratie aufzubauen","Deutschland zu bestrafen ohne Hilfe","Deutschland zu annektieren"],answer:0,cheat:"4 Besatzungszonen: USA, GB, Frankreich, Sowjetunion — Deutschland GETEILT"},
+{id:85,section:"Geschichte und Verantwortung",q:"Was ist die Bedeutung des Datums 27. Januar?",options:["Gründung der BRD","Gedenktag für die Opfer des Nationalsozialismus","Tag der deutschen Einheit","Mauerfall"],answer:1,cheat:"27. Januar 1945 = Befreiung von AUSCHWITZ — daher Gedenkdatum für NS-Opfer"},
+{id:86,section:"Geschichte und Verantwortung",q:"Was symbolisiert die Brandenburger Tor nach der Wiedervereinigung?",options:["Deutsche Militärmacht","Einheit und Freiheit Deutschlands","Den Nationalsozialismus","Den Kalten Krieg"],answer:1,cheat:"BRANDENBURGER TOR = stand in geteiltem Berlin — jetzt Symbol der EINHEIT und FREIHEIT"},
+{id:87,section:"Geschichte und Verantwortung",q:"Was war die Ursache für den Zweiten Weltkrieg?",options:["Ein Handelsstreit","Nationalsozialismus, Aggressionspolitik und Hitlers Expansionswille","Eine Naturkatastrophe","Ein Wirtschaftsstreit"],answer:1,cheat:"HITLERS EXPANSIONSPOLITIK = 'Lebensraum im Osten' — Rassenideologie + Krieg"},
+{id:88,section:"Geschichte und Verantwortung",q:"Was versteht man unter dem Begriff 'Euthanasie' im NS-Kontext?",options:["Eine medizinische Behandlung","Ermordung von Menschen mit Behinderungen durch die Nazis","Sterbehilfe für Kranke","Ein Forschungsprogramm"],answer:1,cheat:"NS-'EUTHANASIE' = Mord an 200.000 behinderten Menschen — als 'Gnadentod' getarnt"},
+{id:89,section:"Geschichte und Verantwortung",q:"Was war der Reichstag?",options:["Ein Militärgebäude","Das deutsche Parlamentsgebäude","Ein Regierungssitz","Ein Gerichtsgebäude"],answer:1,cheat:"REICHS-TAG = Kaiser-PARLAMENT — heute tagt der Bundestag im restaurierten Reichstagsgebäude"},
+{id:90,section:"Geschichte und Verantwortung",q:"Was bedeutet die Abkürzung BRD?",options:["Berliner Regierungs-Demokratie","Bundesrepublik Deutschland","Bund Regionaler Demokraten","Bayerische Republik Deutschland"],answer:1,cheat:"BRD = BUNDES-REPUBLIK Deutschland — das offizielle Kürzel für Deutschland"},
+{id:91,section:"Geschichte und Verantwortung",q:"Was war die Hauptursache für den Aufstieg der NSDAP?",options:["Wirtschaftliche Prosperität","Wirtschaftskrise, Arbeitslosigkeit und politische Instabilität","Religiöse Bewegung","Militärische Stärke"],answer:1,cheat:"WIRTSCHAFTSKRISE 1929 = Massenarbeitslosigkeit = Leute wählten extremistische Parteien"},
+{id:92,section:"Geschichte und Verantwortung",q:"Was ist das Denkmal für die ermordeten Juden Europas?",options:["Ein Museum in Berlin","Ein Mahnmal in Berlin für Holocaust-Opfer","Ein jüdisches Restaurant","Eine Synagoge"],answer:1,cheat:"HOLOCAUST-MAHNMAL Berlin = 2711 Beton-Stelen = Erinnerung an ermordete Juden Europas"},
+{id:93,section:"Geschichte und Verantwortung",q:"Was versteht man unter 'Kollektive Schuld'?",options:["Jeder Deutsche ist persönlich schuldig","Die politische Verantwortung für die NS-Zeit wird von der Gesellschaft getragen","Alle Deutschen müssen Reparationen zahlen","Niemand ist schuldig"],answer:1,cheat:"KOLLEKTIVE Verantwortung ≠ individuelle Schuld — Deutschland als Staat trägt Verantwortung"},
+{id:94,section:"Geschichte und Verantwortung",q:"Was war die Europäische Gemeinschaft (EG)?",options:["Ein Militärbündnis","Eine Vorläuferin der heutigen Europäischen Union","Ein Wirtschaftskonzern","Eine Kulturorganisation"],answer:1,cheat:"EG → EU — EG war der VORGÄNGER der heutigen EU, wirtschaftliche Integration"},
+{id:95,section:"Geschichte und Verantwortung",q:"Was bedeutet die Aussage 'Nie wieder!'?",options:["Deutschland soll keine Kriege mehr gewinnen","Deutschland verpflichtet sich, den Holocaust nicht zu wiederholen","Deutsche dürfen nicht auswandern","Deutschland soll keine Waffen produzieren"],answer:1,cheat:"'NIE WIEDER!' = Kernaussage der deutschen Erinnerungskultur — Holocaust darf sich NIE wiederholen"},
+{id:96,section:"Geschichte und Verantwortung",q:"Was war das Viermächteabkommen nach 1945?",options:["Ein Handelsvertrag","Die Besatzung Deutschlands durch USA, UK, Frankreich und Sowjetunion","Ein Friedensvertrag mit Japan","Ein Militärbündnis"],answer:1,cheat:"4 MÄCHTE: USA + GB + FR + UdSSR teilten Deutschland in Besatzungszonen auf"},
+{id:97,section:"Geschichte und Verantwortung",q:"Was war die Bedeutung des Grundgesetzes für Deutschland nach 1949?",options:["Es ersetzte alle Bundesländer","Es schuf eine stabile demokratische Grundlage","Es war eine provisorische Regelung ohne Bedeutung","Es galt nur für Westdeutschland dauerhaft"],answer:1,cheat:"GG 1949 = DEMOKRATISCHER NEUSTART — aus Fehlern der Weimarer Republik gelernt"},
+{id:98,section:"Geschichte und Verantwortung",q:"Was war die Bedeutung der Studentenbewegung 1968?",options:["Eine Sportveranstaltung","Eine gesellschaftliche Reformbewegung gegen autoritäre Strukturen","Ein Militärputsch","Eine wirtschaftliche Revolution"],answer:1,cheat:"68er = Aufbegehren gegen AUTORITÄT, NS-Vergangenheit der Eltern, Vietnam — gesellschaftlicher Wandel"},
+{id:99,section:"Geschichte und Verantwortung",q:"Was ist der Unterschied zwischen Krieg und Frieden in Bezug auf Deutschland heute?",options:["Deutschland führt weiterhin Kriege","Deutschland engagiert sich für Frieden und internationale Zusammenarbeit","Deutschland hat keine Streitkräfte","Deutschland bleibt neutral"],answer:1,cheat:"FRIEDENSPOLITIK = aus dem Krieg gelernt — Bundeswehr nur zur Verteidigung + NATO"},
+{id:100,section:"Geschichte und Verantwortung",q:"Wann trat Deutschland der NATO bei?",options:["1949","1953","1955","1960"],answer:2,cheat:"1955 = fünf-fünf = BRD trat 1955 der NATO bei — 6 Jahre nach NATO-Gründung"},
+
+// ===== SECTION 3: MENSCH UND GESELLSCHAFT (101-150) =====
+{id:101,section:"Mensch und Gesellschaft",q:"Was versteht man unter Gleichberechtigung von Mann und Frau?",options:["Männer haben mehr Rechte","Frauen und Männer haben gleiche Rechte","Frauen haben mehr Rechte","Nur in bestimmten Bereichen gilt Gleichheit"],answer:1,cheat:"Art. 3 GG: 'Männer und Frauen sind GLEICHBERECHTIGT' — keine Unterschiede!"},
+{id:102,section:"Mensch und Gesellschaft",q:"Was versteht man unter Diskriminierung?",options:["Unterstützung für Minderheiten","Ungleichbehandlung aufgrund von Herkunft, Geschlecht, Religion usw.","Förderung der Vielfalt","Gerechte Behandlung"],answer:1,cheat:"DISKRIMINIERUNG = DIS-KRIMINIEREN = jemanden anders (schlechter) behandeln wegen Merkmalen"},
+{id:103,section:"Mensch und Gesellschaft",q:"Wer darf in Deutschland heiraten?",options:["Nur Personen gleicher Nationalität","Erwachsene, die dies frei entscheiden","Nur Deutsche","Nur Personen mit Arbeit"],answer:1,cheat:"Freie HEIRAT = volljährig + freiwillig — keine Zwangsehe, Art. 6 GG schützt Ehe"},
+{id:104,section:"Mensch und Gesellschaft",q:"Was ist die Ehe für alle?",options:["Pflicht zur Heirat","Gleichgeschlechtliche Paare dürfen in Deutschland heiraten","Mehrfachheirat ist erlaubt","Kinder dürfen heiraten"],answer:1,cheat:"EHE für ALLE = seit 2017 — gleichgeschlechtliche Paare können offiziell HEIRATEN"},
+{id:105,section:"Mensch und Gesellschaft",q:"Was versteht man unter Kinderrechten in Deutschland?",options:["Kinder haben keine besonderen Rechte","Kinder haben das Recht auf Schutz, Bildung und Mitsprache","Eltern entscheiden alles für Kinder","Kinderrechte gelten ab 14 Jahren"],answer:1,cheat:"Kinder-RECHTE = Schutz + Bildung + Beteiligung — seit 2021 im Grundgesetz"},
+{id:106,section:"Mensch und Gesellschaft",q:"Was ist häusliche Gewalt?",options:["Hausbau","Körperliche, psychische oder sexuelle Gewalt innerhalb der Familie","Streitigkeiten unter Nachbarn","Vandalismus"],answer:1,cheat:"HÄUSLICHE Gewalt = in den EIGENEN VIER WÄNDEN — ist strafbar und kein Privatproblem!"},
+{id:107,section:"Mensch und Gesellschaft",q:"Was ist Kinderarbeit in Deutschland?",options:["Erlaubt ab 12 Jahren","Kinder dürfen leichte Arbeiten ab 13 Jahren mit Einschränkungen","Komplett verboten","Erlaubt ab 10 Jahren"],answer:1,cheat:"AB 13 = leichte Jobs mit Einschränkungen (max 2h, nicht in Schulzeit) — schwere Arbeit: verboten"},
+{id:108,section:"Mensch und Gesellschaft",q:"Was ist die Schulpflicht in Deutschland?",options:["Freiwillig","Alle Kinder müssen zur Schule","Nur für Deutsche","Ab 10 Jahren"],answer:1,cheat:"SCHULPFLICHT = PFLICHT zur Schule — alle Kinder ab 6 Jahren, egal welche Nationalität"},
+{id:109,section:"Mensch und Gesellschaft",q:"Wie viele Stunden darf ein Kind in Deutschland maximal täglich arbeiten?",options:["1 Stunde","2 Stunden","3 Stunden","4 Stunden"],answer:1,cheat:"MAX 2 STUNDEN für Kinder ab 13 — und NICHT während der Schulzeit!"},
+{id:110,section:"Mensch und Gesellschaft",q:"Was versteht man unter Zwangsheirat?",options:["Eine traditionelle Heirat","Eine Heirat ohne freie Zustimmung beider Partner","Eine schnelle Heirat","Eine kirchliche Hochzeit"],answer:1,cheat:"ZWANGS-Heirat = OHNE freie Einwilligung = in Deutschland VERBOTEN und strafbar"},
+{id:111,section:"Mensch und Gesellschaft",q:"Was ist der Islam?",options:["Eine politische Ideologie","Eine Weltreligion mit etwa 1,8 Milliarden Gläubigen","Eine regionale Religion","Eine antike Religion"],answer:1,cheat:"ISLAM = eine der Weltreligionen — Muslime, Allah als Gott, Mohammed als Prophet"},
+{id:112,section:"Mensch und Gesellschaft",q:"Was ist in Deutschland unter Religionsfreiheit zu verstehen?",options:["Man muss keiner Religion angehören","Jeder darf frei wählen, ob und welcher Religion er angehört","Nur Christen haben Religionsfreiheit","Religiöse Aktivitäten sind verboten"],answer:1,cheat:"RELIGIONS-FREIHEIT = frei WÄHLEN + frei AUSÜBEN — oder gar keine Religion haben"},
+{id:113,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem Recht auf Bildung?",options:["Kostenlose Universitäten für alle","Jedes Kind hat ein Recht auf Schul- und Berufsausbildung","Bildung nur für Reiche","Bildung ist eine Pflicht, kein Recht"],answer:1,cheat:"RECHT auf Bildung = Schulpflicht + Förderung — alle Kinder sollen lernen können"},
+{id:114,section:"Mensch und Gesellschaft",q:"Was ist ein Verein in Deutschland?",options:["Ein staatliches Unternehmen","Ein freiwilliger Zusammenschluss von Menschen für gemeinsame Ziele","Ein Pflichtverband","Eine politische Partei"],answer:1,cheat:"VEREIN = freiwillig + gemeinsames Ziel (Sport, Kultur, Hobby) — sehr typisch deutsch!"},
+{id:115,section:"Mensch und Gesellschaft",q:"Was sind Grundpflichten in Deutschland?",options:["Es gibt keine Pflichten","Steuern zahlen, Schulpflicht erfüllen, Gesetze einhalten","Militärdienst für alle","Mitgliedschaft in einer Partei"],answer:1,cheat:"PFLICHTEN: Steuern + Schule + Gesetze — Rechte und PFLICHTEN gehören zusammen"},
+{id:116,section:"Mensch und Gesellschaft",q:"Was versteht man unter Ehrenamt in Deutschland?",options:["Ein bezahlter Regierungsjob","Freiwillige unbezahlte Tätigkeit für das Gemeinwohl","Ein Ehrentitel","Ein staatliches Programm"],answer:1,cheat:"EHREN-amt = amt zu EHREN, nicht für Geld — freiwillig für andere helfen"},
+{id:117,section:"Mensch und Gesellschaft",q:"Welche Sprache wird in Deutschland offiziell gesprochen?",options:["Deutsch und Englisch","Deutsch","Deutsch, Türkisch und Arabisch","Alle EU-Sprachen"],answer:1,cheat:"DEUTSCH = die einzige Amtssprache — obwohl viele Sprachen gesprochen werden"},
+{id:118,section:"Mensch und Gesellschaft",q:"Was ist die Bundesagentur für Arbeit?",options:["Ein privates Unternehmen","Eine staatliche Behörde für Arbeitsvermittlung und Arbeitslosengeld","Ein Gewerkschaftsverband","Ein europäisches Amt"],answer:1,cheat:"BA für Arbeit = staatliche BEHÖRDE — hilft bei Job-Suche und zahlt Arbeitslosengeld"},
+{id:119,section:"Mensch und Gesellschaft",q:"Was ist das Jugendschutzgesetz?",options:["Ein Gesetz gegen Jugendkriminalität","Gesetze zum Schutz von Kindern und Jugendlichen","Ein Gesetz zur Förderung von Jugendlichen","Ein Gesetz gegen Jugendarbeitslosigkeit"],answer:1,cheat:"JUGEND-SCHUTZ = SCHUTZ für Jugendliche — z.B. Altersgrenzen für Alkohol, Rauchen, Medien"},
+{id:120,section:"Mensch und Gesellschaft",q:"Ab welchem Alter darf man in Deutschland Alkohol kaufen?",options:["14 Jahre","16 Jahre","18 Jahre","21 Jahre"],answer:1,cheat:"16 Jahre = Bier + Wein, 18 Jahre = Schnaps — 16 für SCHWACHES, 18 für STARKES"},
+{id:121,section:"Mensch und Gesellschaft",q:"Was ist das Rentenalter in Deutschland?",options:["60 Jahre","63 Jahre","65-67 Jahre","70 Jahre"],answer:2,cheat:"65-67 Jahre = Rentenalter — abhängig vom Geburtsjahr, schrittweise erhöht"},
+{id:122,section:"Mensch und Gesellschaft",q:"Was versteht man unter der Sozialhilfe in Deutschland?",options:["Freiwillige Spenden","Staatliche Unterstützung für Menschen ohne ausreichendes Einkommen","Ein Kredit","Eine Versicherung"],answer:1,cheat:"SOZIAL-Hilfe = Staat HILFT Menschen ohne Geld — Grundsicherung zum Leben"},
+{id:123,section:"Mensch und Gesellschaft",q:"Was ist das Kindergeld in Deutschland?",options:["Geld das Kinder bekommen","Staatliche Zahlung an Eltern zur Unterstützung bei der Kindererziehung","Ein Bildungsfonds","Geld für Kinderkleidung"],answer:1,cheat:"KINDER-Geld = Geld für Eltern die KINDER haben — staatliche Unterstützung für Familien"},
+{id:124,section:"Mensch und Gesellschaft",q:"Was ist die Krankenversicherungspflicht in Deutschland?",options:["Freiwillig","Jeder muss krankenversichert sein","Nur Angestellte","Nur Deutsche"],answer:1,cheat:"PFLICHT-Versicherung = JEDER muss versichert sein — niemand soll ohne Gesundheitsschutz sein"},
+{id:125,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem Begriff 'Willkommenskultur'?",options:["Tourismusförderung","Offene Haltung gegenüber Einwanderern und Geflüchteten","Exportförderung","Kulturexport"],answer:1,cheat:"WILLKOMMEN-skultur = Menschen offen EMPFANGEN — Deutschland öffnete sich für Flüchtlinge"},
+{id:126,section:"Mensch und Gesellschaft",q:"Was ist ein Gewerkschaft?",options:["Ein staatliches Amt","Eine Interessenvertretung der Arbeitnehmer","Eine Partei","Ein Unternehmen"],answer:1,cheat:"GEWERKSCHAFT = SCHUTZ der Arbeitnehmer — kämpft für bessere Löhne und Arbeitsbedingungen"},
+{id:127,section:"Mensch und Gesellschaft",q:"Was ist Rassismus?",options:["Biologische Unterschiede zwischen Menschen","Diskriminierung aufgrund der Hautfarbe oder Herkunft","Kulturelle Unterschiede","Religiöse Unterschiede"],answer:1,cheat:"RASSISMUS = Menschen wegen Hautfarbe/Herkunft SCHLECHTER behandeln — verboten in Deutschland"},
+{id:128,section:"Mensch und Gesellschaft",q:"Was sind Grundwerte in Deutschland?",options:["Profite und Wachstum","Menschenwürde, Freiheit, Gleichheit, Gerechtigkeit","Militärmacht und Stärke","Tradition und Konformität"],answer:1,cheat:"4 Grundwerte: WÜRDE + FREIHEIT + GLEICHHEIT + GERECHTIGKEIT — das Fundament Deutschlands"},
+{id:129,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem Prinzip der Gleichheit vor dem Gesetz?",options:["Alle bekommen gleich viel Geld","Alle Menschen werden gleich behandelt, unabhängig von ihrer Herkunft","Alle Menschen sind gleich intelligent","Alle haben das gleiche Einkommen"],answer:1,cheat:"GLEICHHEIT vor GESETZ = Gesetze gelten für ALLE gleich — kein Mensch steht über dem Recht"},
+{id:130,section:"Mensch und Gesellschaft",q:"Was ist Inklusion in der deutschen Gesellschaft?",options:["Ausschluss von Minderheiten","Teilhabe aller Menschen, auch mit Behinderungen","Getrennte Schulen","Sonderbehandlung für Migranten"],answer:1,cheat:"IN-KLUSION = alle EINSCHLIESSEN — Behinderte, Migranten etc. sollen DAZUGEHÖREN"},
+{id:131,section:"Mensch und Gesellschaft",q:"Was ist das Sorgerecht?",options:["Das Recht auf Pflege im Alter","Das rechtliche Verhältnis zwischen Eltern und ihren minderjährigen Kindern","Das Recht auf Sozialhilfe","Das Recht auf Pflegeheimplatz"],answer:1,cheat:"SORGE-recht = Recht und Pflicht für das SORGEN um das Kind — Eltern sind verantwortlich"},
+{id:132,section:"Mensch und Gesellschaft",q:"Was ist der Kinderschutzbund?",options:["Eine staatliche Behörde","Eine Organisation zum Schutz von Kindern","Ein Gesetzbuch","Ein Jugendgericht"],answer:1,cheat:"KINDERSCHUTZ-bund = engagiert sich für Kinder-SCHUTZ — NGO die Kinder schützt"},
+{id:133,section:"Mensch und Gesellschaft",q:"Was versteht man unter Barrierefreiheit?",options:["Kostenfreier Zugang","Zugänglichkeit für Menschen mit Behinderungen","Freier Grenzverkehr","Offene Grenzen"],answer:1,cheat:"BARRIERE-frei = ohne BARRIEREN (Hindernisse) — Rollstuhlfahrer sollen überall hinkommen"},
+{id:134,section:"Mensch und Gesellschaft",q:"Was ist das Adoptionsrecht in Deutschland?",options:["Verboten","Erlaubt unter bestimmten Bedingungen auch für gleichgeschlechtliche Paare","Nur für kinderlose Paare","Nur für Verheiratete"],answer:1,cheat:"ADOPTION = erlaubt, auch für gleichgeschlechtliche Paare seit 2017 — Kindeswohl ist zentral"},
+{id:135,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem Begriff 'Toleranz'?",options:["Alles akzeptieren","Andere Meinungen und Lebensweisen respektieren","Schwäche zeigen","Gesetze ignorieren"],answer:1,cheat:"TOLERANZ = tolerare (lat. = ertragen) — andere RESPEKTIEREN auch wenn man anders denkt"},
+{id:136,section:"Mensch und Gesellschaft",q:"Was ist ein wesentliches Merkmal der deutschen Gesellschaft?",options:["Einheitliche Meinung","Kulturelle Vielfalt und Pluralismus","Religiöser Monismus","Politische Uniformität"],answer:1,cheat:"PLURALISMUS = VIELE verschiedene Meinungen, Kulturen, Religionen — das macht Deutschland reich"},
+{id:137,section:"Mensch und Gesellschaft",q:"Was ist das Bundesjugendamt?",options:["Ein Amt für Bundesjugendspiele","Eine Behörde zum Schutz von Kindern und Jugendlichen","Ein Ministerium","Eine Schule"],answer:1,cheat:"JUGEND-amt = staatliche BEHÖRDE die KINDER/JUGENDLICHE schützt und unterstützt"},
+{id:138,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem Begriff 'Integration'?",options:["Isolation von Migranten","Eingliederung von Menschen in die Gesellschaft","Abschiebung von Migranten","Trennung von Kulturen"],answer:1,cheat:"INTEGRATION = IN die Gesellschaft = EINGLIEDERUNG — gemeinsam statt getrennt leben"},
+{id:139,section:"Mensch und Gesellschaft",q:"Was ist das Jugendamt in Deutschland?",options:["Ein Jobvermittlungsamt für Jugendliche","Eine staatliche Behörde zum Schutz und zur Förderung von Kindern","Ein Bildungsministerium","Eine Polizeibehörde"],answer:1,cheat:"JUGEND-AMT = SCHÜTZT + FÖRDERT Kinder — greift ein wenn Eltern nicht für Kinder sorgen"},
+{id:140,section:"Mensch und Gesellschaft",q:"Was bedeutet Meinungsvielfalt in Deutschland?",options:["Es gibt nur eine erlaubte Meinung","Verschiedene Meinungen dürfen frei geäußert werden","Die Regierung bestimmt die richtige Meinung","Medien haben eine Einheitsmeinung"],answer:1,cheat:"VIELFALT der Meinungen = Grundlage der Demokratie — Streit um die beste Lösung ist gut!"},
+{id:141,section:"Mensch und Gesellschaft",q:"Was ist das Allgemeine Gleichbehandlungsgesetz (AGG)?",options:["Ein Gesetz zur Vereinheitlichung des Rechts","Ein Gesetz gegen Diskriminierung im Alltag","Ein Steuergesetz","Ein Bildungsgesetz"],answer:1,cheat:"AGG = Anti-DISKRIMINIERUNGS-Gesetz — schützt vor Benachteiligung wegen Merkmalen"},
+{id:142,section:"Mensch und Gesellschaft",q:"Was ist ein Flüchtling?",options:["Jemand der reist","Eine Person die ihr Heimatland wegen Verfolgung verlassen muss","Ein Wirtschaftsmigrant","Ein Tourist"],answer:1,cheat:"FLÜCHTLING = FLIEHT vor Verfolgung — Genfer Flüchtlingskonvention schützt ihn"},
+{id:143,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem deutschen Pflegesystem?",options:["Private Betreuung nur","Staatlich geförderte Pflege für Bedürftige, finanziert durch Pflegeversicherung","Ausschließlich familiäre Pflege","Kirchliche Einrichtungen"],answer:1,cheat:"PFLEGE-versicherung = Staat HILFT bei Pflegekosten — Pflegekasse zahlt mit"},
+{id:144,section:"Mensch und Gesellschaft",q:"Was ist Ehrenamt?",options:["Ein Ehrentitel","Freiwillige Tätigkeit ohne Bezahlung für das Gemeinwohl","Ein Regierungsamt","Ein Unternehmensposten"],answer:1,cheat:"EHREN = freiwillig, ohne Bezahlung — Feuerwehr, Rotes Kreuz, Sportverein etc."},
+{id:145,section:"Mensch und Gesellschaft",q:"Was ist das Jugendschutzgesetz in Bezug auf Alkohol?",options:["Alkohol ist für Jugendliche immer verboten","Ab 16 darf Bier/Wein, ab 18 darf Schnaps","Ab 18 ist alles erlaubt","Kein Alkohol unter 21"],answer:1,cheat:"16 = Bier+Wein, 18 = alles — merke: bei 16 beginnt das Trinken 'schwach', bei 18 'stark'"},
+{id:146,section:"Mensch und Gesellschaft",q:"Was ist Cybermobbing?",options:["Online-Einkaufen","Belästigung und Einschüchterung über das Internet","Online-Gaming","Soziale Netzwerke"],answer:1,cheat:"CYBER = Internet, MOBBING = schikanieren — online schikanieren ist strafbar!"},
+{id:147,section:"Mensch und Gesellschaft",q:"Was versteht man unter dem Datenschutz in Deutschland?",options:["Schutz von Computern","Schutz personenbezogener Daten vor Missbrauch","Schutz von Unternehmensdaten","Schutz von Staatsgeheimnissen"],answer:1,cheat:"DATEN-SCHUTZ = DEINE persönlichen Daten schützen — DSGVO ist das wichtigste Gesetz"},
+{id:148,section:"Mensch und Gesellschaft",q:"Was ist das Grundrecht auf Versammlungsfreiheit?",options:["Das Recht, eine Wohnung zu haben","Das Recht, sich friedlich zu versammeln","Das Recht auf Freizügigkeit","Das Recht auf Reisefreiheit"],answer:1,cheat:"VERSAMMLUNGS-freiheit = zusammen DEMONSTRIEREN dürfen — Art. 8 GG"},
+{id:149,section:"Mensch und Gesellschaft",q:"Was ist der soziale Wohnungsbau in Deutschland?",options:["Luxuswohnungen für Reiche","Staatlich geförderte günstige Wohnungen für einkommensschwache Menschen","Nur staatliche Gebäude","Ferienhäuser"],answer:1,cheat:"SOZIALER Wohnungsbau = GÜNSTIGER Wohnraum für EINKOMMENSSCHWACHE — Staat fördert"},
+{id:150,section:"Mensch und Gesellschaft",q:"Was ist das Bürgerliche Gesetzbuch (BGB)?",options:["Die Verfassung","Das Gesetz für private Rechtsverhältnisse","Das Strafgesetz","Das Verwaltungsrecht"],answer:1,cheat:"BGB = für PRIVATE Verhältnisse (Verträge, Ehe, Eigentum) — das 'Alltagsrecht' der Bürger"},
+
+// ===== SECTION 4: STAAT UND GESELLSCHAFT (151-200) =====
+{id:151,section:"Staat und Gesellschaft",q:"Was ist die Aufgabe der Polizei in Deutschland?",options:["Die Regierung zu schützen","Die öffentliche Sicherheit und Ordnung zu gewährleisten","Gesetze zu machen","Urteile zu sprechen"],answer:1,cheat:"POLIZEI = SCHUTZ + ORDNUNG für ALLE — schützt Bürger, nicht nur die Regierung"},
+{id:152,section:"Staat und Gesellschaft",q:"Was versteht man unter dem Steuerrecht in Deutschland?",options:["Recht auf Steuerfreiheit","Gesetze zur Erhebung von Steuern","Steuerbefreiung für alle","Steuerrecht nur für Unternehmen"],answer:1,cheat:"STEUER-Recht = GESETZE die regeln, wer WIEVIEL zahlt — Einkommensteuer, USt etc."},
+{id:153,section:"Staat und Gesellschaft",q:"Wofür werden in Deutschland Steuern verwendet?",options:["Für private Konten der Politiker","Für öffentliche Ausgaben wie Schulen, Straßen, Gesundheit","Für den Militäraufbau","Für Parteienfinanzierung"],answer:1,cheat:"STEUERN = Gemeinschaftsgeld für ALLE — Schulen, Krankenhaus, Straßen profitieren alle"},
+{id:154,section:"Staat und Gesellschaft",q:"Was ist das Finanzamt in Deutschland?",options:["Eine Bank","Die staatliche Behörde für die Steuererhebung","Ein Ministerium","Eine private Firma"],answer:1,cheat:"FINANZ-amt = staatliche BEHÖRDE die STEUERN einzieht — Steuererklärung geht dahin"},
+{id:155,section:"Staat und Gesellschaft",q:"Was ist das Sozialversicherungssystem in Deutschland?",options:["Freiwillige Versicherungen","Pflichtversicherungen für Kranken, Renten, Unfall, Pflege, Arbeitslosigkeit","Nur Krankenversicherung","Nur für Beamte"],answer:1,cheat:"5 SÄULEN: Kranken + Rente + Unfall + Pflege + Arbeitslosen-Versicherung = Sozialversicherung"},
+{id:156,section:"Staat und Gesellschaft",q:"Was ist das Kindergeld in Deutschland?",options:["Geld für Spielzeug","Staatliche monatliche Zahlung für Eltern mit Kindern","Ein Bildungsgutschein","Geld für Kindertageseinrichtungen"],answer:1,cheat:"KINDERGELD = monatlich für JEDES Kind — hilft Familien bei den Kosten für Kinder"},
+{id:157,section:"Staat und Gesellschaft",q:"Was ist die Gewerbefreiheit?",options:["Kostenlose Geschäfte","Das Recht, ein Gewerbe frei zu betreiben","Staatliche Unternehmen","Gewerkschaftsrecht"],answer:1,cheat:"GEWERBE-freiheit = frei ein UNTERNEHMEN gründen — Unternehmertum ist in Deutschland erlaubt"},
+{id:158,section:"Staat und Gesellschaft",q:"Welche Aufgabe hat das Jugendamt?",options:["Jugendliche ausbilden","Kinder und Familien schützen und unterstützen","Sportkurse anbieten","Schulen verwalten"],answer:1,cheat:"JUGEND-AMT = SCHUTZ + UNTERSTÜTZUNG von Kindern und Familien in Not"},
+{id:159,section:"Staat und Gesellschaft",q:"Was ist der öffentliche Dienst in Deutschland?",options:["Private Dienstleistungen","Beschäftigte des Staates in Behörden und öffentlichen Einrichtungen","Ehrenamtliche Tätigkeiten","Internationale Organisationen"],answer:1,cheat:"ÖFFENTLICHER Dienst = für den STAAT arbeiten — Beamte, Lehrer, Verwaltungsangestellte"},
+{id:160,section:"Staat und Gesellschaft",q:"Was ist das Bundesministerium für Arbeit?",options:["Ein Jobvermittlungsamt","Ein Ministerium für Arbeitnehmerrechte und Sozialpolitik","Eine Gewerkschaft","Ein privates Unternehmen"],answer:1,cheat:"BUNDESMINISTERIUM für Arbeit = MINISTERIUM = Teil der Regierung für Arbeitspolitik"},
+{id:161,section:"Staat und Gesellschaft",q:"Was sind kommunale Aufgaben in Deutschland?",options:["Außenpolitik","Lokale Verwaltung: Straßen, Müll, Schulen, Wasser","Bundesgesetze","Militär"],answer:1,cheat:"KOMMUNE = Gemeinde/Stadt = zuständig für LOCAL: Straßen, Müll, lokale Schulen"},
+{id:162,section:"Staat und Gesellschaft",q:"Was ist das Einwohnermeldeamt?",options:["Ein Wahlamt","Eine Behörde für Einwohnerregistrierung","Ein Ausländeramt","Ein Einbürgerungsamt"],answer:1,cheat:"EINWOHNER-melde-Amt = hier MELDEST du dich AN wenn du umziehst — Pflicht in Deutschland!"},
+{id:163,section:"Staat und Gesellschaft",q:"Wann muss man sich in Deutschland ummelden?",options:["Innerhalb von 1 Woche","Innerhalb von 2 Wochen","Innerhalb von 2 Wochen nach dem Umzug","Innerhalb von 1 Monat"],answer:2,cheat:"2 WOCHEN nach Umzug ummelden — Pflicht, sonst Bußgeld!"},
+{id:164,section:"Staat und Gesellschaft",q:"Was ist der Personalausweis in Deutschland?",options:["Ein Reisepass","Ein offizielles Identitätsdokument für deutsche Staatsbürger","Eine Aufenthaltsgenehmigung","Ein Führerschein"],answer:1,cheat:"PERSONAL-AUSWEIS = AUSWEIS für PERSON = Identitätsdokument — jeder Deutsche braucht einen"},
+{id:165,section:"Staat und Gesellschaft",q:"Was ist eine Aufenthaltserlaubnis?",options:["Ein Arbeitsvertrag","Ein Dokument, das Ausländern den Aufenthalt in Deutschland erlaubt","Ein Reisedokument","Ein Bildungsnachweis"],answer:1,cheat:"AUFENTHALTS-erlaubnis = ERLAUBNIS zum AUFENTHALT in Deutschland für Nicht-EU-Bürger"},
+{id:166,section:"Staat und Gesellschaft",q:"Was ist die Einbürgerung?",options:["Ein Sprachtest","Das Verfahren zur Verleihung der deutschen Staatsbürgerschaft","Eine Arbeitsgenehmigung","Ein Asylverfahren"],answer:1,cheat:"EIN-BÜRGERUNG = zum deutschen BÜRGER WERDEN — deutsche Staatsbürgerschaft erhalten"},
+{id:167,section:"Staat und Gesellschaft",q:"Was sind Voraussetzungen für die Einbürgerung?",options:["Nur Deutschkenntnisse","Aufenthalt, Sprachkenntnisse, wirtschaftliche Selbstständigkeit, Gesetzestreue","Nur langer Aufenthalt","Nur Arbeit"],answer:1,cheat:"EINBÜRGERUNG = 5-8 Jahre + Deutsch B1 + keine Sozialhilfe + Loyalität zur Verfassung"},
+{id:168,section:"Staat und Gesellschaft",q:"Was ist das Staatsangehörigkeitsgesetz?",options:["Das Aufenthaltsrecht","Das Gesetz, das regelt, wer Deutsche/r ist","Das Asylgesetz","Das Reisegesetz"],answer:1,cheat:"STAATSANGEHÖRIGKEITS-Gesetz = regelt WER DEUTSCH ist — Geburt, Abstammung, Einbürgerung"},
+{id:169,section:"Staat und Gesellschaft",q:"Was ist eine Bürgerinitiative?",options:["Eine staatliche Behörde","Ein freiwilliger Zusammenschluss von Bürgern für ein gemeinsames Anliegen","Eine politische Partei","Ein Wirtschaftsverband"],answer:1,cheat:"BÜRGER-INITIATIVE = Bürger INITIIEREN etwas — z.B. für neuen Spielplatz kämpfen"},
+{id:170,section:"Staat und Gesellschaft",q:"Was ist das Kommunalparlament?",options:["Das Bundesparlament","Der gewählte Stadtrat oder Gemeinderat","Das Länderparlament","Ein Bundesbehörde"],answer:1,cheat:"KOMMUNAL = Gemeinde/Stadt — PARLAMENT der Gemeinde = Stadtrat/Gemeinderat"},
+{id:171,section:"Staat und Gesellschaft",q:"Was ist die Aufgabe des Bürgermeisters?",options:["Bundesgesetze machen","Die Gemeinde/Stadt leiten und verwalten","Urteile sprechen","Steuern erheben"],answer:1,cheat:"BÜRGER-meister = MEISTER der Gemeinde = leitet die Stadt/Gemeinde = lokaler Chef"},
+{id:172,section:"Staat und Gesellschaft",q:"Was ist ein Bebauungsplan?",options:["Ein Reiseplan","Eine kommunale Planungsurkunde für Bebauung und Nutzung von Grundstücken","Ein Bauantrag","Ein Architektenentwurf"],answer:1,cheat:"BEBAUUNGS-Plan = Plan wie Grundstücke BEBAUT werden dürfen — Gemeinde entscheidet"},
+{id:173,section:"Staat und Gesellschaft",q:"Was ist das Standesamt?",options:["Ein Sportamt","Eine Behörde für Geburten, Sterbefälle, Heiraten","Ein Steueramt","Ein Einwanderungsamt"],answer:1,cheat:"STANDES-amt = registriert deinen STAND im Leben: Geburt, Heirat, Tod — Personenregister"},
+{id:174,section:"Staat und Gesellschaft",q:"Was ist eine Geburtsurkunde?",options:["Ein Reisepass","Ein Dokument, das die Geburt beurkundet","Ein Schulzeugnis","Ein Ausweis"],answer:1,cheat:"GEBURTS-urkunde = URKUNDE über GEBURT — offizieller Nachweis deiner Geburt"},
+{id:175,section:"Staat und Gesellschaft",q:"Was ist eine Heiratsurkunde?",options:["Ein Verlobungsversprechen","Ein amtliches Dokument, das die Ehe bescheinigt","Ein Scheidungsdokument","Ein Aufenthaltstitel"],answer:1,cheat:"HEIRATS-urkunde = URKUNDE über HEIRAT = amtlicher Beweis der Ehe"},
+{id:176,section:"Staat und Gesellschaft",q:"Was ist das Ausländeramt?",options:["Ein Tourismusbüro","Eine Behörde für Aufenthalts- und Einbürgerungsangelegenheiten von Ausländern","Ein Amt für Arbeitsvermittlung","Ein Kulturinstitut"],answer:1,cheat:"AUSLÄNDER-amt = BEHÖRDE für AUSLÄNDER — Aufenthalt, Visa, Einbürgerung"},
+{id:177,section:"Staat und Gesellschaft",q:"Was ist die Agentur für Arbeit?",options:["Ein privates Unternehmen","Eine staatliche Behörde für Arbeitsvermittlung und Arbeitslosengeld","Eine Gewerkschaft","Ein Bildungsinstitut"],answer:1,cheat:"AGENTUR für Arbeit = staatliche JOBVERMITTLUNG + zahlt Arbeitslosengeld (ALG I)"},
+{id:178,section:"Staat und Gesellschaft",q:"Was ist Hartz IV / Bürgergeld?",options:["Ein Kredit","Eine staatliche Grundsicherung für Arbeitslose und Bedürftige","Ein Luxusprogramm","Eine Strafe"],answer:1,cheat:"BÜRGERGELD (früher Hartz IV) = GRUNDSICHERUNG wenn kein Geld — Jobcenter zahlt"},
+{id:179,section:"Staat und Gesellschaft",q:"Was ist der Unterschied zwischen ALG I und Bürgergeld?",options:["Es gibt keinen Unterschied","ALG I nach Jobverlust für begrenzte Zeit, Bürgergeld als Grundsicherung","ALG I ist höher","Bürgergeld ist nur für Migranten"],answer:1,cheat:"ALG I = Versicherungsleistung (du hast einbezahlt), Bürgergeld = Sozialhilfe (Bedürftigkeit)"},
+{id:180,section:"Staat und Gesellschaft",q:"Was ist das Elterngeld in Deutschland?",options:["Geld von Großeltern","Staatliche Zahlung für Eltern nach der Geburt eines Kindes","Ein Kredit für Kinderwagen","Kindergeld"],answer:1,cheat:"ELTERN-geld = ELTERN bekommen Geld nach GEBURT — für 12-14 Monate, damit sie beim Kind sein können"},
+{id:181,section:"Staat und Gesellschaft",q:"Was ist der Elternurlaub (Elternzeit)?",options:["Urlaub mit Kindern","Das Recht, nach der Geburt beruflich pausieren oder reduzieren","Ein Schulferienprogramm","Ein Reisegutschein"],answer:1,cheat:"ELTERN-ZEIT = Zeit für das Kind — bis 3 Jahre können Eltern pausieren, Job ist sicher"},
+{id:182,section:"Staat und Gesellschaft",q:"Was versteht man unter Mietrecht?",options:["Das Recht ein Haus zu kaufen","Gesetze, die die Rechte und Pflichten von Mieter und Vermieter regeln","Das Recht frei umzuziehen","Steuerrecht für Immobilien"],answer:1,cheat:"MIET-recht = MIETER + VERMIETER = Regelung der MIETE — starker Mieterschutz in Deutschland"},
+{id:183,section:"Staat und Gesellschaft",q:"Was ist ein Mietvertrag?",options:["Ein Kaufvertrag","Ein rechtlich verbindlicher Vertrag zwischen Mieter und Vermieter","Eine Wohnungsbeschreibung","Ein Kreditantrag"],answer:1,cheat:"MIET-vertrag = VERTRAG über MIETE — beide Seiten haben Rechte UND Pflichten"},
+{id:184,section:"Staat und Gesellschaft",q:"Was ist das Wohngeld?",options:["Geld für Hauskauf","Staatlicher Zuschuss zur Miete für einkommensschwache Haushalte","Ein Wohnungskredit","Geld für Wohnungseinrichtung"],answer:1,cheat:"WOHN-geld = Staat gibt GELD für WOHNEN — hilft Geringverdienern die Miete zu zahlen"},
+{id:185,section:"Staat und Gesellschaft",q:"Was ist das Aufenthaltsgesetz?",options:["Ein Tourismusgesetz","Das Gesetz, das Einreise und Aufenthalt von Ausländern regelt","Das Asylgesetz","Das Staatsangehörigkeitsgesetz"],answer:1,cheat:"AUFENTHALTS-Gesetz = regelt EINREISE + AUFENTHALT von Nicht-EU-Bürgern in Deutschland"},
+{id:186,section:"Staat und Gesellschaft",q:"Was ist die Niederlassungserlaubnis?",options:["Ein Reisedokument","Ein dauerhaftes Aufenthaltsrecht in Deutschland","Eine Arbeitsgenehmigung","Ein Visum"],answer:1,cheat:"NIEDERLASSUNGS-erlaubnis = DAUERHAFT in Deutschland bleiben dürfen — nach 5 Jahren"},
+{id:187,section:"Staat und Gesellschaft",q:"Was ist Asyl?",options:["Eine Unterkunft","Schutz für politisch verfolgte Personen","Sozialhilfe","Ein Visum"],answer:1,cheat:"ASYL = gr. 'asylon' (Zufluchtsort) = SCHUTZ für politisch VERFOLGTE — Art. 16a GG"},
+{id:188,section:"Staat und Gesellschaft",q:"Was ist ein Visum?",options:["Ein Reisepass","Eine offizielle Genehmigung zur Einreise in ein Land","Eine Geburtsurkunde","Ein Arbeitsvertrag"],answer:1,cheat:"VISUM = ERLAUBNIS zur EINREISE — Stempel im Pass der sagt 'du darfst rein'"},
+{id:189,section:"Staat und Gesellschaft",q:"Wer ist in Deutschland steuerpflichtig?",options:["Nur deutsche Staatsbürger","Alle in Deutschland lebenden und arbeitenden Personen","Nur Angestellte","Nur Selbstständige"],answer:1,cheat:"ALLE die in Deutschland LEBEN und ARBEITEN zahlen Steuern — nicht nur Deutsche"},
+{id:190,section:"Staat und Gesellschaft",q:"Was ist die Rentenversicherung?",options:["Eine private Altersvorsorge","Eine Pflichtversicherung für die Altersrente","Eine freiwillige Versicherung","Eine Lebensversicherung"],answer:1,cheat:"RENTEN-Versicherung = PFLICHT-Versicherung — Arbeitnehmer zahlen ein, bekommen später RENTE"},
+{id:191,section:"Staat und Gesellschaft",q:"Was ist die Unfallversicherung in Deutschland?",options:["Kfz-Versicherung","Pflichtversicherung für Berufsunfälle","Eine freiwillige Versicherung","Hausratversicherung"],answer:1,cheat:"UNFALL-Versicherung = bei BERUFSUNFALL zahlt die Berufsgenossenschaft — PFLICHT für Arbeitgeber"},
+{id:192,section:"Staat und Gesellschaft",q:"Was ist das Arbeitsrecht?",options:["Das Recht zu arbeiten","Gesetze, die die Beziehung zwischen Arbeitgeber und Arbeitnehmer regeln","Das Recht auf Urlaub","Das Gewerkschaftsrecht"],answer:1,cheat:"ARBEITS-recht = regelt ALLES rund ums Arbeiten — Mindestlohn, Kündigung, Urlaub, Schutz"},
+{id:193,section:"Staat und Gesellschaft",q:"Was ist Mindestlohn?",options:["Das höchste erlaubte Gehalt","Die gesetzlich festgelegte untere Grenze für Löhne","Ein Durchschnittslohn","Ein staatlicher Lohn"],answer:1,cheat:"MINDEST-lohn = UNTERSTE Grenze — kein Arbeitgeber darf WENIGER zahlen als den Mindestlohn"},
+{id:194,section:"Staat und Gesellschaft",q:"Was ist Tarifvertrag?",options:["Ein Telefonvertrag","Ein Vertrag zwischen Gewerkschaft und Arbeitgeberverband über Löhne und Bedingungen","Ein privater Arbeitsvertrag","Ein Staatsvertrag"],answer:1,cheat:"TARIF-vertrag = GEWERKSCHAFT + ARBEITGEBER handeln LOHN und BEDINGUNGEN aus — für ganze Branchen"},
+{id:195,section:"Staat und Gesellschaft",q:"Was ist das Streikrecht in Deutschland?",options:["Verboten","Das Recht der Arbeitnehmer, die Arbeit niederzulegen um Forderungen durchzusetzen","Nur für Beamte","Nur bei Notfällen"],answer:1,cheat:"STREIK = Arbeit NIEDERLEGEN = Druckmittel der Gewerkschaft — Grundrecht für Arbeitnehmer"},
+{id:196,section:"Staat und Gesellschaft",q:"Was sind kommunale Steuern in Deutschland?",options:["Einkommensteuer","Grundsteuer und Gewerbesteuer","Mehrwertsteuer","Körperschaftssteuer"],answer:1,cheat:"KOMMUNALE Steuern = GRUNDSTEUER (Grundstücke) + GEWERBESTEUER (Unternehmen) — fließen an Gemeinde"},
+{id:197,section:"Staat und Gesellschaft",q:"Was ist das öffentlich-rechtliche Fernsehen?",options:["Privates Fernsehen","Vom Staat kontrolliertes Fernsehen","Staatlich finanziertes, aber unabhängiges Fernsehen","Internetfernsehen"],answer:2,cheat:"ÖRF = ARD/ZDF = GEBÜHREN-finanziert (GEZ), aber UNABHÄNGIG vom Staat — kein Staatssender!"},
+{id:198,section:"Staat und Gesellschaft",q:"Was ist der Rundfunkbeitrag?",options:["Freiwillige Zahlung","Pflichtabgabe für öffentlich-rechtliche Medien","Eine Steuer","Ein Kabelanschluss"],answer:1,cheat:"RUNDFUNK-beitrag = jeder Haushalt zahlt — finanziert ARD, ZDF, Deutschlandradio"},
+{id:199,section:"Staat und Gesellschaft",q:"Was ist die freie Marktwirtschaft?",options:["Staatliche Planung aller Preise","Ein System, in dem Angebot und Nachfrage die Preise bestimmen","Ein sozialistisches System","Ein System mit festen Löhnen"],answer:1,cheat:"MARKT-wirtschaft = ANGEBOT + NACHFRAGE bestimmen Preise — nicht der Staat"},
+{id:200,section:"Staat und Gesellschaft",q:"Was ist die Soziale Marktwirtschaft?",options:["Ein rein sozialistisches System","Freier Markt kombiniert mit sozialer Absicherung","Ein rein kapitalistisches System","Ein planwirtschaftliches System"],answer:1,cheat:"SOZIALE Marktwirtschaft = Markt + SOZIAL = Ludwig Erhards Konzept — Wohlstand für alle"},
+
+// ===== SECTION 5: ALLTAG IN DEUTSCHLAND (201-260) =====
+{id:201,section:"Alltag in Deutschland",q:"Was versteht man unter Mülltrennung in Deutschland?",options:["Alles in einen Behälter","Sortierung von Abfall in verschiedene Kategorien","Nur Glas trennen","Nur Papier trennen"],answer:1,cheat:"MÜLL-TRENNUNG = Papier + Plastik + Glas + Restmüll + Bio getrennt — Umweltschutz!"},
+{id:202,section:"Alltag in Deutschland",q:"Was sind die typischen Mülltonnen in Deutschland?",options:["Nur gelb und schwarz","Blau (Papier), Gelb (Plastik), Grün/Braun (Bio), Schwarz (Rest)","Rot und grün","Nur eine Farbe"],answer:1,cheat:"FARBEN: BLAU=Papier, GELB=Plastik, BRAUN=Bio, SCHWARZ=Rest — Farbe = Inhalt!"},
+{id:203,section:"Alltag in Deutschland",q:"Was ist der Pfand in Deutschland?",options:["Ein Strafgeld","Eine Rückgabegebühr für Flaschen und Dosen","Eine Steuer","Ein Rabatt"],answer:1,cheat:"PFAND = Kaution für Flaschen — gibst du zurück, bekommst du dein Geld WIEDER"},
+{id:204,section:"Alltag in Deutschland",q:"Was versteht man unter Öffnungszeiten in Deutschland?",options:["Zeiten für Behördengänge","Zeiten, zu denen Geschäfte und Behörden geöffnet sind","Öffnungszeiten von Parks","Öffnungszeiten von Schulen"],answer:1,cheat:"ÖFFNUNGS-zeiten = wann GEÖFFNET ist — in Deutschland oft kürzer als im Ausland!"},
+{id:205,section:"Alltag in Deutschland",q:"Was ist der Ladenschluss in Deutschland?",options:["Wann Läden immer geschlossen sind","Gesetzliche Regelung der Ladenöffnungszeiten","Ein Tag an dem alle Läden schließen","Öffnungszeiten für Supermärkte"],answer:1,cheat:"LADEN-SCHLUSS = gesetzliche Regeln wann Läden schließen MÜSSEN — Sonntags meist zu!"},
+{id:206,section:"Alltag in Deutschland",q:"Was ist der Sonntag in Deutschland traditionell?",options:["Ein Arbeitstag","Ein Ruhetag mit eingeschränkten Öffnungszeiten","Ein Einkaufstag","Ein Feiertag"],answer:1,cheat:"SONNTAG = RUHETAG — Läden meist geschlossen, kein Lärm, Ruhezeit ist heilig!"},
+{id:207,section:"Alltag in Deutschland",q:"Was ist die Residenzpflicht für Asylbewerber?",options:["Pflicht in Deutschland zu wohnen","Pflicht, in einem bestimmten Landkreis zu bleiben","Pflicht, in Berlin zu wohnen","Pflicht ein Haus zu besitzen"],answer:1,cheat:"RESIDENZ-pflicht = du musst im ZUGEWIESENEN Landkreis BLEIBEN — für Asylbewerber"},
+{id:208,section:"Alltag in Deutschland",q:"Was ist die KFZ-Steuer?",options:["Eine Straßenmaut","Eine Steuer für den Besitz eines Fahrzeugs","Eine Versicherung","Eine Benzinsteuer"],answer:1,cheat:"KFZ = Kraftfahrzeug = Auto-STEUER — jährliche Steuer für das HABEN eines Autos"},
+{id:209,section:"Alltag in Deutschland",q:"Was braucht man in Deutschland um ein Auto fahren zu dürfen?",options:["Nur ein Fahrzeug","Führerschein, Versicherung und Zulassung","Nur Führerschein","Nur Versicherung"],answer:1,cheat:"3 DINGE: Führer-SCHEIN + Versicherung + Zulassung (TÜV) — alle drei PFLICHT!"},
+{id:210,section:"Alltag in Deutschland",q:"Was ist der TÜV?",options:["Ein Autoclub","Technischer Überwachungsverein – prüft Fahrzeugsicherheit","Eine Autoversicherung","Ein Fahrzeugregister"],answer:1,cheat:"TÜV = Technischer ÜBERWACHUNGS-verein = prüft ob Auto SICHER ist — alle 2 Jahre"},
+{id:211,section:"Alltag in Deutschland",q:"Was gilt in Deutschland für das Fahren ohne Versicherung?",options:["Ein kleines Bußgeld","Strafrechtliche Konsequenzen","Keine Konsequenzen","Führerscheinentzug für 1 Tag"],answer:1,cheat:"OHNE Versicherung fahren = STRAFTAT — Freiheitsstrafe bis 1 Jahr möglich!"},
+{id:212,section:"Alltag in Deutschland",q:"Was ist die Kfz-Haftpflichtversicherung?",options:["Freiwillig","Pflichtversicherung für alle Fahrzeughalter","Nur für Lkw","Nur für Neuwagen"],answer:1,cheat:"KFZ-HAFTPFLICHT = PFLICHT für JEDES Auto — zahlt Schäden die du ANDEREN zufügst"},
+{id:213,section:"Alltag in Deutschland",q:"Was sind Bundesautobahnen?",options:["Stadtstraßen","Mautpflichtige Schnellstraßen","Schnellstraßen in Deutschland (meist ohne Tempolimit für Pkw)","Nur für Lkw"],answer:2,cheat:"AUTOBAHN = dt. Schnellstraße — oft KEIN Tempolimit für PKW (Richtgeschwindigkeit 130)"},
+{id:214,section:"Alltag in Deutschland",q:"Was ist in Deutschland Regelgeschwindigkeit auf der Autobahn?",options:["100 km/h","120 km/h","130 km/h (Richtgeschwindigkeit)","Keine Begrenzung"],answer:2,cheat:"130 km/h = RICHT-Geschwindigkeit (empfohlen, nicht Limit) — kein hartes Limit außer Schilder"},
+{id:215,section:"Alltag in Deutschland",q:"Wie hoch ist die Promillegrenze in Deutschland?",options:["0,0 Promille","0,5 Promille","1,0 Promille","1,5 Promille"],answer:1,cheat:"0,5 PROMILLE = allgemeine Grenze — für Fahranfänger und unter 21: 0,0 Promille!"},
+{id:216,section:"Alltag in Deutschland",q:"Was ist die Gurtpflicht in Deutschland?",options:["Empfehlung","Pflicht für alle Fahrzeuginsassen","Nur für Fahrer","Nur vorne"],answer:1,cheat:"GURT-PFLICHT = ALLE müssen Gurt anlegen — Fahrer + alle Mitfahrer, vorne und hinten"},
+{id:217,section:"Alltag in Deutschland",q:"Was ist die Helmpflicht für Fahrradfahrer in Deutschland?",options:["Pflicht für alle","Pflicht nur für Kinder","Empfohlen, aber nicht Pflicht","Verboten"],answer:2,cheat:"HELM beim Fahrrad = empfohlen, aber KEINE PFLICHT (außer für Kinder in manchen Ländern)"},
+{id:218,section:"Alltag in Deutschland",q:"Was ist das Rauchen in Deutschland geregelt?",options:["Überall erlaubt","Rauchverbote in öffentlichen Gebäuden, Restaurants und Arbeitsstätten","Komplett verboten","Nur in bestimmten Städten erlaubt"],answer:1,cheat:"RAUCH-verbote = in Gastronomie, Büros, öffentlichen Gebäuden — Schutz für Nichtraucher"},
+{id:219,section:"Alltag in Deutschland",q:"Was ist das Nichtraucherschutzgesetz?",options:["Ein Gesetz zur Förderung des Rauchens","Schutz vor Passivrauchen in öffentlichen Räumen","Ein Gesetz über Tabaksteuer","Ein Gesetz über Tabakwerbung"],answer:1,cheat:"NICHTRAUCHERSCHUTZ = schützt NICHTRAUCHER vor Passiv-Rauch — dein Recht auf rauchfreie Luft"},
+{id:220,section:"Alltag in Deutschland",q:"Was bedeutet Datenschutz im Alltag?",options:["Daten speichern","Schutz persönlicher Informationen vor unbefugtem Zugriff","Offenlegung von Daten","Datenweitergabe"],answer:1,cheat:"DATEN-SCHUTZ = DEINE Daten gehören DIR — niemand darf sie ohne Erlaubnis nutzen"},
+{id:221,section:"Alltag in Deutschland",q:"Was ist die DSGVO?",options:["Ein Datenbankformat","Datenschutz-Grundverordnung der EU","Ein Versicherungsgesetz","Eine Bankvorschrift"],answer:1,cheat:"DSGVO = EU-DATENSCHUTZ — gilt für alle in der EU, schützt persönliche Daten"},
+{id:222,section:"Alltag in Deutschland",q:"Was ist das Hausrecht?",options:["Das Recht ein Haus zu kaufen","Das Recht, in den eigenen Räumlichkeiten über den Zugang zu bestimmen","Das Recht der Vermieter","Das Recht auf Wohnung"],answer:1,cheat:"HAUS-recht = MEIN Haus, MEINE Regeln — du bestimmst wer rein darf"},
+{id:223,section:"Alltag in Deutschland",q:"Was ist die Nachtruhe in Deutschland?",options:["Keine offizielle Regelung","Ruhezeiten zwischen 22 und 6 Uhr wo Lärm vermieden werden muss","Ruhezeit nur an Wochenenden","Nur in Wohngebieten"],answer:1,cheat:"NACHT-RUHE = 22:00 - 6:00 Uhr — kein lauter Lärm, Rücksicht auf Nachbarn!"},
+{id:224,section:"Alltag in Deutschland",q:"Was versteht man unter Hausordnung?",options:["Reinigungsregeln","Regelwerk für das Verhalten im Wohnhaus","Bauvorschriften","Mietpreisregeln"],answer:1,cheat:"HAUS-ORDNUNG = Regeln im Haus — Müll, Lärm, Treppen putzen — alle müssen sich halten"},
+{id:225,section:"Alltag in Deutschland",q:"Was ist das Jugendschutzgesetz für Kinofilme?",options:["Alle Filme für alle","Altersfreigaben (z.B. ab 0, 6, 12, 16, 18 Jahren)","Nur für Kinderfilme","Keine Regelung"],answer:1,cheat:"FSK = Freiwillige Selbstkontrolle = 0/6/12/16/18 — Kinder/Jugendliche werden geschützt"},
+{id:226,section:"Alltag in Deutschland",q:"Was ist der Grüne Punkt?",options:["Ein Umweltzeichen","Ein Zeichen auf Verpackungen für das duale Entsorgungssystem","Ein Biozeichen","Ein Qualitätszeichen"],answer:1,cheat:"GRÜNER PUNKT = Verpackung ist am dualen ENTSORGUNGSSYSTEM beteiligt — geht in gelbe Tonne"},
+{id:227,section:"Alltag in Deutschland",q:"Was ist das Bio-Siegel in Deutschland?",options:["Ein Modebegriff","Ein staatlich kontrolliertes Zertifikat für ökologische Produkte","Ein Firmenlogo","Ein EU-Qualitätszeichen"],answer:1,cheat:"BIO-Siegel = staatlich kontrolliert — ökologisch angebaut, keine künstlichen Pestizide"},
+{id:228,section:"Alltag in Deutschland",q:"Was ist der öffentliche Nahverkehr (ÖPNV)?",options:["Privatfahrten","Bus, Bahn, U-Bahn als öffentliches Transportmittel","Taxifahrten","Carsharing"],answer:1,cheat:"ÖPNV = Öffentlicher Nahverkehr = BUS + BAHN + U-Bahn + Tram — für alle zugänglich"},
+{id:229,section:"Alltag in Deutschland",q:"Was ist das Schwarzfahren?",options:["Mit schwarzem Auto fahren","Ohne gültigen Fahrschein im ÖPNV fahren","Nachts fahren","Zu schnell fahren"],answer:1,cheat:"SCHWARZ-fahren = OHNE TICKET fahren = STRAFTAT — wird mit erhöhtem Beförderungsentgelt bestraft"},
+{id:230,section:"Alltag in Deutschland",q:"Was ist ein Deutschlandticket?",options:["Ein Reisepass","Ein bundesweites Ticket für den ÖPNV","Ein Ausweisdokument","Ein Zugticket nach Deutschland"],answer:1,cheat:"DEUTSCHLAND-ticket = 49€ für ALLE ÖPNV in ganz Deutschland — Bahn, Bus, U-Bahn"},
+{id:231,section:"Alltag in Deutschland",q:"Was ist das Bahnnetz in Deutschland?",options:["Nur Hochgeschwindigkeitszüge","Ein umfangreiches Schienennetz aus ICE, IC, RE und S-Bahn","Nur Gütertransport","Nur in Städten"],answer:1,cheat:"DB-Bahnnetz = ICE + IC + RE + S-Bahn — vernetzt ganz Deutschland"},
+{id:232,section:"Alltag in Deutschland",q:"Was ist die Krankenkasse in Deutschland?",options:["Eine Privatbank","Eine Versicherung für Gesundheitskosten","Ein Krankenhaus","Eine staatliche Behörde"],answer:1,cheat:"KRANK-KASSE = zahlt deine Arzt- und Krankenhauskosten — Pflicht für alle!"},
+{id:233,section:"Alltag in Deutschland",q:"Was ist die Hausarztpraxis?",options:["Ein Krankenhaus","Ein Allgemeinmediziner als erste Anlaufstelle","Ein Notarzt","Ein Facharzt"],answer:1,cheat:"HAUS-ARZT = dein persönlicher Allgemeinmediziner — erste Anlaufstelle bei Krankheit"},
+{id:234,section:"Alltag in Deutschland",q:"Was ist die Notaufnahme in Deutschland?",options:["Ein Arzt zu Hause","Die Notfallversorgung im Krankenhaus","Ein Notarzt","Eine Apotheke"],answer:1,cheat:"NOT-aufnahme = im KRANKENHAUS = für ECHTE Notfälle — Tel. 112 = Feuerwehr/Rettung"},
+{id:235,section:"Alltag in Deutschland",q:"Was ist die Notrufnummer in Deutschland?",options:["110","112","119","999"],answer:1,cheat:"112 = europäische NOTRUFNUMMER für Feuerwehr + Rettungsdienst, 110 = Polizei"},
+{id:236,section:"Alltag in Deutschland",q:"Was ist die Polizei-Notrufnummer in Deutschland?",options:["110","112","119","118"],answer:0,cheat:"110 = POLIZEI (merke: Polizei hat 11 Buchstaben = 110), 112 = Feuerwehr/Rettung"},
+{id:237,section:"Alltag in Deutschland",q:"Was ist die Apotheke in Deutschland?",options:["Ein Supermarkt","Eine Facheinrichtung für Medikamente","Ein Krankenhaus","Ein Arztpraxis"],answer:1,cheat:"APOTHEKE = nur HIER bekommst du Medikamente — für verschreibungspflichtige MUSS Rezept dabei"},
+{id:238,section:"Alltag in Deutschland",q:"Was ist ein Rezept beim Arzt?",options:["Ein Kochrezept","Eine ärztliche Verordnung für Medikamente","Ein Überweisungsschein","Eine Krankmeldung"],answer:1,cheat:"REZEPT = Arzt VERSCHREIBT Medikament = du holst es in der APOTHEKE ab"},
+{id:239,section:"Alltag in Deutschland",q:"Was ist eine Krankmeldung (AU) in Deutschland?",options:["Eine Urlaubsanfrage","Ein ärztliches Attest bei Arbeitsunfähigkeit","Eine Krankenhausaufnahme","Ein Arzttermin"],answer:1,cheat:"AU = ArbeitsUnfähigkeits-bescheinigung = 'gelber Schein' — muss ab 3. Tag zum Arbeitgeber"},
+{id:240,section:"Alltag in Deutschland",q:"Was ist ein Schulzeugnis in Deutschland?",options:["Ein Ausweisdokument","Eine offizielle Beurteilung der schulischen Leistungen","Ein Diplom","Ein Bewerbungsschreiben"],answer:1,cheat:"ZEUGNIS = BEURTEILUNG der Leistungen — Noten 1 (sehr gut) bis 6 (ungenügend)"},
+{id:241,section:"Alltag in Deutschland",q:"Was ist das duale Ausbildungssystem?",options:["Nur Schulausbildung","Berufsausbildung in Betrieb und Berufsschule","Nur Universitätsstudium","Praktikum"],answer:1,cheat:"DUAL = ZWEI Orte: Betrieb (praktisch) + Berufsschule (theoretisch) — typisch deutsch!"},
+{id:242,section:"Alltag in Deutschland",q:"Was ist das Abitur?",options:["Ein Berufsabschluss","Das Abschlusszeugnis der gymnasialen Oberstufe (Hochschulreife)","Ein Meisterbrief","Ein Bachelor"],answer:1,cheat:"ABITUR = HOCHSCHULREIFE = Zugang zur Universität — höchster Schulabschluss"},
+{id:243,section:"Alltag in Deutschland",q:"Was ist die Berufsschule?",options:["Eine Universität","Eine Schule für Auszubildende neben dem Betrieb","Eine Fachschule","Eine Privatschule"],answer:1,cheat:"BERUFS-Schule = für AUSZUBILdende = theoretischer Teil der dualen Ausbildung"},
+{id:244,section:"Alltag in Deutschland",q:"Was ist BAföG?",options:["Eine Steuer","Staatliche Ausbildungsförderung für Studenten","Ein Studienkredit","Ein Stipendium"],answer:1,cheat:"BAföG = BundesAusbildungsFörderungsGesetz = Staat zahlt Studium — teils Zuschuss, teils Darlehen"},
+{id:245,section:"Alltag in Deutschland",q:"Was ist die Volkshochschule (VHS)?",options:["Eine staatliche Universität","Eine kommunale Weiterbildungseinrichtung","Eine Privatschule","Eine Sprachschule"],answer:1,cheat:"VOLKSSCHULE = für das VOLK = günstige Kurse für alle — Sprachen, Backen, Computer etc."},
+{id:246,section:"Alltag in Deutschland",q:"Was ist ein Personalausweis für Kinder unter 16?",options:["Nicht möglich","Möglich auf Antrag der Eltern","Nur Reisepass","Pflicht ab 10 Jahren"],answer:1,cheat:"Kinder können Personalausweis BEANTRAGEN — aber erst AB 16 ist Ausweispflicht!"},
+{id:247,section:"Alltag in Deutschland",q:"Was ist das Gemeinderecht?",options:["Bundesrecht","Landesrecht über die Verwaltung von Gemeinden","Privatrecht","Steuerrecht"],answer:1,cheat:"GEMEINDE-recht = LANDES-recht für GEMEINDEN — jedes Bundesland hat eigene Gemeindeordnung"},
+{id:248,section:"Alltag in Deutschland",q:"Was ist das Bürgeramt?",options:["Das Büro des Bürgermeisters","Eine Behörde für allgemeine Bürgerangelegenheiten (Meldung, Ausweis, etc.)","Ein Gericht","Ein Finanzamt"],answer:1,cheat:"BÜRGER-amt = Amt für BÜRGER = Meldung, Ausweis, Führungszeugnis — alles an einem Ort"},
+{id:249,section:"Alltag in Deutschland",q:"Was ist ein Führungszeugnis?",options:["Ein Zeugnis über Fahrkünste","Ein Dokument über polizeiliches Vorstrafenregister","Ein Arbeitszeugnis","Ein Schulzeugnis"],answer:1,cheat:"FÜHRUNGS-zeugnis = zeigt ob du VORSTRAFEN hast — Arbeitgeber verlangen es manchmal"},
+{id:250,section:"Alltag in Deutschland",q:"Was ist das Bankgeheimnis in Deutschland?",options:["Totale Anonymität","Schutz von Kundendaten durch Banken, eingeschränkt durch Steuerbehörden","Keine Pflicht zur Offenlegung","Unbegrenzter Schutz"],answer:1,cheat:"BANK-Geheimnis = Bank schützt deine Daten — ABER Steuerfahndung kann trotzdem zugreifen"},
+{id:251,section:"Alltag in Deutschland",q:"Was ist eine Kontonummer in Deutschland?",options:["Eine Kreditkartennummer","Eine IBAN zur Identifikation eines Bankkontos","Eine Steueridentifikationsnummer","Eine Sozialversicherungsnummer"],answer:1,cheat:"IBAN = International Bank Account Number — deine deutsche Kontonummer beginnt mit DE"},
+{id:252,section:"Alltag in Deutschland",q:"Was ist das Lastschriftverfahren?",options:["Eine Überweisung","Automatischer Einzug von Beträgen vom Konto durch Gläubiger","Ein Bargeldabheben","Eine Kreditkartenzahlung"],answer:1,cheat:"LASTSCHRIFT = Gläubiger zieht Geld VOM Konto ein (z.B. Miete, Strom) — bequem aber Vorsicht!"},
+{id:253,section:"Alltag in Deutschland",q:"Was ist eine Überweisung?",options:["Ein Bargeldtransfer","Elektronischer Transfer von Geld von einem Konto auf ein anderes","Ein Kreditkartenvorgang","Eine Scheckzahlung"],answer:1,cheat:"ÜBER-WEISUNG = du WEIST die Bank an Geld zu ÜBERWEISEN = Konto zu Konto"},
+{id:254,section:"Alltag in Deutschland",q:"Was ist der Euro?",options:["Eine österreichische Währung","Die gemeinsame Währung der Eurozone","Eine deutsche Währung","Eine internationale Währung"],answer:1,cheat:"EURO = gemeinsame Währung von 20 EU-Ländern — DM war 2002 = Deutschland + Euro"},
+{id:255,section:"Alltag in Deutschland",q:"Was ist die Mehrwertsteuer in Deutschland?",options:["Eine Einkommensteuer","Eine Verbrauchssteuer auf Waren und Dienstleistungen (19% oder 7%)","Eine Immobiliensteuer","Eine Körperschaftssteuer"],answer:1,cheat:"MEHRWERT-Steuer = Steuer auf MEHR-WERT beim Verkauf = 19% (normal) oder 7% (ermäßigt, z.B. Lebensmittel)"},
+{id:256,section:"Alltag in Deutschland",q:"Was ist eine Steuererklärung?",options:["Eine Strafanzeige beim Finanzamt","Ein jährliches Dokument an das Finanzamt über Einkünfte","Ein Antrag auf Steuerbefreiung","Eine Steuerquittung"],answer:1,cheat:"STEUER-ERKLÄRUNG = du ERKLÄRST dem Finanzamt was du verdient hast — oft bekommst du Geld zurück!"},
+{id:257,section:"Alltag in Deutschland",q:"Was ist das Weihnachtsgeld?",options:["Pflicht","Freiwillige oder tarifliche Sonderzahlung im November/Dezember","Ein staatliches Programm","Ein Geschenk"],answer:1,cheat:"WEIHNACHTS-geld = extra Gehalt vor Weihnachten — oft 1 Monatsgehalt, je nach Tarifvertrag"},
+{id:258,section:"Alltag in Deutschland",q:"Was ist die Lohnsteuer?",options:["Steuer auf Miete","Einkommensteuer für Arbeitnehmer, direkt vom Lohn abgezogen","Steuer für Selbstständige","Eine freiwillige Steuer"],answer:1,cheat:"LOHN-Steuer = Steuer auf LOHN = wird direkt vom Arbeitgeber abgezogen — du siehst Netto"},
+{id:259,section:"Alltag in Deutschland",q:"Was ist ein Sparplan?",options:["Ein Ausgabenplan","Regelmäßige Geldanlage für die Zukunft","Ein Bankkredit","Eine Versicherung"],answer:1,cheat:"SPAR-plan = regelmäßig SPAREN = für Rente, Hauskauf oder Notgroschen anlegen"},
+{id:260,section:"Alltag in Deutschland",q:"Was ist die Schufa?",options:["Eine Steuerb","Eine Auskunftei über Kreditwürdigkeit von Personen","Eine Bank","Eine staatliche Behörde"],answer:1,cheat:"SCHUFA = Schutzgemeinschaft für allgemeine Kreditsicherung = deine Kredit-AKTE — beeinflusst Kredite + Mietverträge"},
+
+// ===== SECTION 6: NRW-SPEZIFISCHE FRAGEN (261-310) =====
+{id:261,section:"NRW-Spezifisch",q:"Welches ist das bevölkerungsreichste Bundesland Deutschlands?",options:["Bayern","Baden-Württemberg","Nordrhein-Westfalen","Niedersachsen"],answer:2,cheat:"NRW = 18 Mio. Einwohner = bevölkerungsreichstes Land — mehr als Bayern!"},
+{id:262,section:"NRW-Spezifisch",q:"Wie heißt die Landeshauptstadt von Nordrhein-Westfalen?",options:["Köln","Bonn","Düsseldorf","Dortmund"],answer:2,cheat:"DÜSSELDORF = NRW-Hauptstadt — obwohl Köln größer ist, ist Düsseldorf die HAUPTSTADT"},
+{id:263,section:"NRW-Spezifisch",q:"Was ist das Wappen von Nordrhein-Westfalen?",options:["Ein Löwe","Ein Adler","Ein dreigeteiltes Wappen mit Rhein, Rose und Pferd","Ein Kreuz"],answer:2,cheat:"NRW-Wappen = DREI Teile: Rheinland (Streifen), Westfalen (Pferd), Lippe (Rose)"},
+{id:264,section:"NRW-Spezifisch",q:"Welcher Fluss fließt durch Nordrhein-Westfalen?",options:["Die Elbe","Der Rhein","Die Donau","Die Weser"],answer:1,cheat:"RHEIN = der wichtigste Fluss in NRW — Köln, Düsseldorf, Bonn liegen am Rhein"},
+{id:265,section:"NRW-Spezifisch",q:"Was ist das Ruhrgebiet?",options:["Ein Fluss","Die größte Industrieregion Deutschlands im Westen","Ein Nationalpark","Ein Bundesland"],answer:1,cheat:"RUHR-GEBIET = Deutschlands INDUSTRIE-Herz — Kohle, Stahl, heute Strukturwandel"},
+{id:266,section:"NRW-Spezifisch",q:"Welche Stadt ist die größte in Nordrhein-Westfalen?",options:["Düsseldorf","Dortmund","Essen","Köln"],answer:3,cheat:"KÖLN = größte Stadt NRW mit ~1 Mio. Einwohnern — Düsseldorf ist aber die Hauptstadt!"},
+{id:267,section:"NRW-Spezifisch",q:"Wofür ist der Kölner Dom bekannt?",options:["Als Regierungssitz","Als eines der bedeutendsten gotischen Kathedralen der Welt","Als Wirtschaftszentrum","Als Schloss"],answer:1,cheat:"KÖLNER DOM = gotisch + Weltkulturerbe + 157m hoch — Symbol von Köln UND Deutschland"},
+{id:268,section:"NRW-Spezifisch",q:"Was ist das Landesparlament von NRW?",options:["Der Landtag Düsseldorf","Der Bundesrat","Der Bundestag","Die Landesregierung"],answer:0,cheat:"LANDTAG Düsseldorf = NRW-Parlament — tagt in Düsseldorf, wählt Ministerpräsident"},
+{id:269,section:"NRW-Spezifisch",q:"Wie heißt das Regierungsoberhaupt von NRW?",options:["Bürgermeister","Ministerpräsident/in","Bundeskanzler","Gouverneur"],answer:1,cheat:"MINISTERPRÄSIDENT = Chef der Landesregierung NRW — wie Kanzler, aber für ein Bundesland"},
+{id:270,section:"NRW-Spezifisch",q:"Was ist der Karneval in NRW bekannt?",options:["Ein Sportfest","Die 'fünfte Jahreszeit' mit Umzügen, besonders in Köln","Ein religiöses Fest","Ein Volksfest im Sommer"],answer:1,cheat:"KARNEVAL = 'fünfte Jahreszeit' — Köln und Düsseldorf feiern RIESIG am Rosenmontag"},
+{id:271,section:"NRW-Spezifisch",q:"Was ist der Strukturwandel im Ruhrgebiet?",options:["Ausbau der Kohleindustrie","Wandel von Bergbau und Stahl zu Dienstleistungen und Technologie","Bevölkerungswachstum","Ausbau des Agrarsektors"],answer:1,cheat:"STRUKTUR-WANDEL = Kohle/Stahl weg, Kultur/Tech/Dienstleistungen kommen — Zechen werden Museen"},
+{id:272,section:"NRW-Spezifisch",q:"Welche Hochschule ist in NRW besonders bekannt?",options:["Heidelberg","RWTH Aachen","LMU München","HU Berlin"],answer:1,cheat:"RWTH AACHEN = Technische Hochschule Weltklasse — Ingenieure aus aller Welt studieren hier"},
+{id:273,section:"NRW-Spezifisch",q:"Was ist der Rheinische Dialekt?",options:["Ein Schriftdialekt","Die lokalen Dialekte im Rheinland (z.B. Kölsch, Düsseldorfer Platt)","Eine Fremdsprache","Eine Amtssprache"],answer:1,cheat:"KÖLSCH = Dialekt der Kölner — 'Wat mutt, dat mutt' = was sein muss, muss sein"},
+{id:274,section:"NRW-Spezifisch",q:"Was ist Kölsch außer dem Dialekt?",options:["Eine Speise","Ein obergäriges Bier aus Köln","Ein Musikstil","Ein Tanz"],answer:1,cheat:"KÖLSCH = Kölner BIER (obergärig, hell) UND der Kölner DIALEKT — doppelte Bedeutung!"},
+{id:275,section:"NRW-Spezifisch",q:"Welcher Rosenmontag-Umzug ist der bekannteste in Deutschland?",options:["München","Berlin","Köln","Hamburg"],answer:2,cheat:"KÖLNER Rosenmontag = größter Karnevalsumzug Deutschlands — über 1 Mio. Zuschauer!"},
+{id:276,section:"NRW-Spezifisch",q:"Was ist die Messe Düsseldorf bekannt für?",options:["Lebensmittelmesse","Eine der größten Messestädte der Welt","Automesse","Buchmesse"],answer:1,cheat:"DÜSSELDORF Messe = eine der weltgrößten — Medica, boot, interpack etc. — Top-Messeplatz"},
+{id:277,section:"NRW-Spezifisch",q:"Was ist das Zeche Zollverein?",options:["Ein aktives Bergwerk","Ein UNESCO-Weltkulturerbe und Kulturzentrum in Essen","Eine Fabrik","Ein Park"],answer:1,cheat:"ZOLLVEREIN Essen = ehemalige Zeche = UNESCO-ERBE + Kulturzentrum — Industriekultur"},
+{id:278,section:"NRW-Spezifisch",q:"Was ist Bonn bekannt für?",options:["Als Hafen","Als frühere Bundeshauptstadt und Sitz von UN-Institutionen","Als Industriestadt","Als Bergbaustadt"],answer:1,cheat:"BONN = frühere HAUPTSTADT Westdeutschlands (1949-1991) + Beethoven-Geburtsstadt + UN"},
+{id:279,section:"NRW-Spezifisch",q:"Welche Sprache ist Amtssprache in NRW?",options:["Kölsch","Deutsch","Westfälisch","Rheinisch"],answer:1,cheat:"DEUTSCH = Amtssprache — auch in NRW, trotz vieler Dialekte und Migranten"},
+{id:280,section:"NRW-Spezifisch",q:"Was ist NRW bekannt für in der Wirtschaft?",options:["Landwirtschaft","Industrie, Dienstleistungen, Medien und Handel","Tourismus","Bergbau allein"],answer:1,cheat:"NRW = wirtschaftsstärkstes Bundesland — Industrie (Chemie, Stahl) + Medien (RTL, WDR)"},
+{id:281,section:"NRW-Spezifisch",q:"Wo sitzt der Westdeutsche Rundfunk (WDR)?",options:["Düsseldorf","Dortmund","Köln","Bonn"],answer:2,cheat:"WDR = Köln! Das öffentlich-rechtliche Rundfunkhaus NRWs sitzt in KÖLN"},
+{id:282,section:"NRW-Spezifisch",q:"Was ist das Sauerland?",options:["Eine Stadt in NRW","Eine Mittelgebirgsregion in NRW","Ein Industriegebiet","Ein Fluss"],answer:1,cheat:"SAUERLAND = Mittelgebirge im Süden NRWs — Skifahren, Wandern, Wälder"},
+{id:283,section:"NRW-Spezifisch",q:"Was ist das Münsterland bekannt für?",options:["Bergbau","Fahrräder, Schlösser und Landwirtschaft","Industrie","Weinbau"],answer:1,cheat:"MÜNSTERLAND = Fahrrad-Paradies + viele Schlösser + flache Landschaft = Radtourismus"},
+{id:284,section:"NRW-Spezifisch",q:"Was ist Münster bekannt für?",options:["Als Industriestadt","Als Fahrradstadt und Universitätsstadt","Als Hafenstadt","Als Hauptstadt NRWs"],answer:1,cheat:"MÜNSTER = meistste Fahrräder pro Kopf + Uni-Stadt + Westfälischer Friede 1648"},
+{id:285,section:"NRW-Spezifisch",q:"Was ist der Westfälische Friede?",options:["Ein moderner Handelsvertrag","Der Friedensvertrag 1648 der den 30-jährigen Krieg beendete, unterzeichnet in Münster","Ein Landwirtschaftsprogramm","Ein Kirchenvertrag"],answer:1,cheat:"WESTFÄLISCHER FRIEDE 1648 = Ende des 30-jährigen Krieges — in MÜNSTER und Osnabrück unterzeichnet"},
+{id:286,section:"NRW-Spezifisch",q:"Was ist das Bergische Land bekannt für?",options:["Kohle","Historische Werkzeug- und Messerindustrie, Wälder","Weinbau","Fischerei"],answer:1,cheat:"BERGISCHES LAND = Solinger MESSER + Wuppertaler Schwebebahn + Wälder"},
+{id:287,section:"NRW-Spezifisch",q:"Was ist die Wuppertaler Schwebebahn?",options:["Ein Aufzug","Eine historische Einschienenbahn über dem Wuppertal","Eine Bergbahn","Eine U-Bahn"],answer:1,cheat:"SCHWEBEBAHN Wuppertal = SCHWEBT über dem Fluss Wupper — einzigartige Bahn seit 1901!"},
+{id:288,section:"NRW-Spezifisch",q:"Welche Farben hat die Flagge von NRW?",options:["Schwarz-Rot-Gold","Grün-Weiß","Blau-Weiß","Rot-Weiß-Grün"],answer:1,cheat:"NRW-Flagge = GRÜN-WEISS — grün für Hoffnung, weiß für Reinheit"},
+{id:289,section:"NRW-Spezifisch",q:"Was ist der Rheinturm in Düsseldorf?",options:["Ein Schloss","Ein Fernsehturm am Rheinufer","Eine Brücke","Eine Kirche"],answer:1,cheat:"RHEINTURM Düsseldorf = Fernsehturm + hat eine Dezimal-Uhr aus Lichtern — Wahrzeichen"},
+{id:290,section:"NRW-Spezifisch",q:"Was ist die Landessprache NRWs?",options:["Kölsch","Westfälisch","Deutsch (Hochdeutsch)","Plattdeutsch"],answer:2,cheat:"HOCHDEUTSCH = Amts-/Landessprache in NRW — Dialekte (Kölsch, Platt) sind regional"},
+{id:291,section:"NRW-Spezifisch",q:"Was ist der Ruhrpott?",options:["Ein Kochtopf","Umgangssprachlich für das Ruhrgebiet","Ein Museum","Ein Fluss"],answer:1,cheat:"RUHR-POTT = umgangssprachlich für das Ruhrgebiet — 'Pott' = Dialektausdruck für Topf/Kessel"},
+{id:292,section:"NRW-Spezifisch",q:"Was ist der Kölner Karneval besonders bekannt für?",options:["Trachten","Kostüme, Musik, Kamelle und Umzüge","Bierfeste","Jahrmarktsfeste"],answer:1,cheat:"KÖLNER Karneval = Kostüme + Kamelle (Bonbons werfen) + Jecken = kein Oktoberfest, eigener Stil!"},
+{id:293,section:"NRW-Spezifisch",q:"Was ist Kamelle im Karneval?",options:["Eine Musikart","Bonbons und Süßigkeiten die beim Umzug geworfen werden","Ein Kostüm","Ein Karnevalslied"],answer:1,cheat:"KAMELLE = Kamellen = Bonbons die vom Umzugswagen geworfen werden — 'Kamelle!' rufen!"},
+{id:294,section:"NRW-Spezifisch",q:"Was ist das Kohlenpott-Feeling?",options:["Ein Kochgefühl","Das besondere Lebensgefühl und die Identität der Ruhrgebietsbewohner","Ein Musikstil","Eine Sportart"],answer:1,cheat:"KOHLENPOTT = Ruhrgebiet-Identität — Arbeiterkultur, Zusammenhalt, Direktheit, Herzlichkeit"},
+{id:295,section:"NRW-Spezifisch",q:"Was ist der Rhein-Ruhr-Verkehrsverbund (VRR)?",options:["Ein Straßennetz","Ein Nahverkehrsverbund in der Rhein-Ruhr-Region","Eine Autobahn","Ein Eisenbahnunternehmen"],answer:1,cheat:"VRR = Verkehrsverbund Rhein-Ruhr = ÖPNV-Netz für Ruhrgebiet + Düsseldorf — ein Ticket!"},
+{id:296,section:"NRW-Spezifisch",q:"Welche Sportvereine sind in NRW besonders bekannt?",options:["FC Bayern und BVB","BVB Dortmund, FC Schalke 04, Borussia Mönchengladbach","Hamburger SV","Eintracht Frankfurt"],answer:1,cheat:"NRW-Fußball: BVB (Dortmund) + S04 (Schalke) + Gladbach = NRW ist Fußball-Hochburg!"},
+{id:297,section:"NRW-Spezifisch",q:"Was ist Signal Iduna Park?",options:["Ein Konzerthaus","Das Stadion von Borussia Dortmund","Ein Einkaufszentrum","Ein Museum"],answer:1,cheat:"SIGNAL IDUNA PARK = BVB Dortmund Stadion = größtes Fußballstadion Deutschlands (81.365)"},
+{id:298,section:"NRW-Spezifisch",q:"Was ist der Kölner Karneval-Ruf?",options:["Alaaf!","Helau!","Hoppeditz!","Prost!"],answer:0,cheat:"ALAAF! = Kölner Karnevalsruf — Düsseldorf sagt 'Helau!' — merke: KÖLN=ALAAF!"},
+{id:299,section:"NRW-Spezifisch",q:"Was ist Düsseldorfs Karneval-Ruf?",options:["Alaaf!","Helau!","Hoppeditz!","Prost!"],answer:1,cheat:"HELAU! = Düsseldorfer Karnevalsruf — Köln sagt 'Alaaf!' — merke: DÜSSELDORF=HELAU!"},
+{id:300,section:"NRW-Spezifisch",q:"Was ist die Ruhr Universität Bochum?",options:["Eine Berufsschule","Eine der größten Universitäten in Deutschland","Eine Privatuniversität","Eine Kunsthochschule"],answer:1,cheat:"RUB = Ruhr-Uni Bochum = eine der GRÖSSTEN Unis in Deutschland — im Ruhrgebiet"},
+{id:301,section:"NRW-Spezifisch",q:"Was ist das Landschaftsgesetz NRW?",options:["Ein Baugesetz","Gesetz zum Schutz von Natur und Landschaft in NRW","Ein Forstgesetz","Ein Agrargesetz"],answer:1,cheat:"NRW Landschaftsgesetz = NATUR SCHÜTZEN — Schutzgebiete, Biotope, Grünflächen in NRW"},
+{id:302,section:"NRW-Spezifisch",q:"Was ist das Schulgesetz NRW?",options:["Bundesgesetz","Das Gesetz, das das Schulwesen in NRW regelt","Ein privates Schulrecht","Ein internationales Gesetz"],answer:1,cheat:"SCHULGESETZ NRW = Landesgesetz — Bildung ist LÄNDERSACHE, nicht Bundessache"},
+{id:303,section:"NRW-Spezifisch",q:"Welche Schulform gibt es in NRW speziell?",options:["Nur Gymnasium","Gesamtschule, Gymnasium, Realschule, Hauptschule, Sekundarschule","Nur Hauptschule","Nur Realschule"],answer:1,cheat:"NRW Schulformen: HAUPT + REAL + GYM + GESAMT + SEKUND + Förderschule — viele Wege!"},
+{id:304,section:"NRW-Spezifisch",q:"Was ist das Verfassungsgericht NRW?",options:["Das Bundesverfassungsgericht","Der Verfassungsgerichtshof NRW in Münster","Das Oberlandesgericht","Ein Landgericht"],answer:1,cheat:"VerfGH NRW = in MÜNSTER — schützt die NRW-Landesverfassung (wie BVerfG für Bund)"},
+{id:305,section:"NRW-Spezifisch",q:"Was ist die Landesverfassung NRW?",options:["Das Grundgesetz","Die Verfassung des Landes NRW aus dem Jahr 1950","Ein Bundesgesetz","Eine EU-Verordnung"],answer:1,cheat:"NRW-Verfassung 1950 = eigene LANDESVERFASSUNG — alle Bundesländer haben eigene Verfassung"},
+{id:306,section:"NRW-Spezifisch",q:"Was ist das Integrationsministerium NRW?",options:["Ein Bundesministerium","Ein Landesministerium für Integration und Teilhabe","Eine NGO","Eine Bundesbehörde"],answer:1,cheat:"NRW-INTEGRATIONSMINISTERIUM = Landesministerium — kümmert sich um Integration von Migranten in NRW"},
+{id:307,section:"NRW-Spezifisch",q:"Was ist der Duisburger Hafen?",options:["Ein Meereshafen","Europas größter Binnenhafen","Ein Fischereihafen","Ein Militärhafen"],answer:1,cheat:"DUISBURG = DUISPORT = Europas GRÖSSTER Binnenhafen — am Rhein, riesiges Logistikzentrum"},
+{id:308,section:"NRW-Spezifisch",q:"Was ist das Bergwerk in NRW historisch bekannt für?",options:["Edelsteinabbau","Kohle- und Erzabbau","Salzbergbau","Goldabbau"],answer:1,cheat:"NRW BERGBAU = Kohle! Ruhrgebiet = Kohlerevier — Bergbau prägte die Region Jahrzehnte"},
+{id:309,section:"NRW-Spezifisch",q:"Wann wurde das Bergwerk Prosper-Haniel, die letzte Zeche im Ruhrgebiet, geschlossen?",options:["2005","2010","2018","2020"],answer:2,cheat:"2018 = Ende des Kohlebergbaus im Ruhrgebiet — Prosper-Haniel in Bottrop = LETZTE Zeche"},
+{id:310,section:"NRW-Spezifisch",q:"Was ist der NRW-Tag?",options:["Ein Feiertag","Das jährliche Landesfest von NRW","Ein Parlamentstag","Ein Sportfest"],answer:1,cheat:"NRW-TAG = jährliches LANDESFEST — feiert NRWs Gründung am 23. August 1946"},
+];
+
+const SECTIONS = [...new Set(ALL_QUESTIONS.map(q => q.section))];
+
+
+
+// ==================== I18N ====================
+let currentLang = localStorage.getItem('lang') || 'de';
+
+const i18n = {
+  de: {
+    heroTitle: 'Leben in<br>Deutschland',
+    heroSub: '310 offizielle Prüfungsfragen mit Antworten<br>und Merkhilfen (Cheat Codes) für NRW',
+    installText: 'Als App installieren für Offline-Zugriff',
+    installBtn: 'Installieren',
+    statFragen: 'Fragen',
+    statGelernt: 'Gelernt',
+    statNote: 'Letzte Note',
+    btnAll: '🎯 Alle 310 Fragen',
+    btnBrowse: '📖 Alle durchsuchen',
+    btnWrong: '❌ Falsche wiederholen',
+    btnRandom: '🎲 Zufällig 50',
+    sectionDone: 'gelernt',
+    sectionFragen: 'Fragen',
+    questionLabel: 'Frage',
+    ofLabel: 'von',
+    cheatLabel: '⚡ Merkhilfe',
+    cheatBoxLabel: '⚡ Merkhilfe (Cheat Code)',
+    correctFb: '✓ Richtig!',
+    wrongFb: '✗ Leider falsch',
+    correctAnswer: 'Richtige Antwort:',
+    nextBtn: 'Weiter →',
+    resultSub: 'Dein Ergebnis:',
+    resultPassed: 'Bestanden!',
+    resultFail: 'Noch nicht bestanden',
+    resultTryAgain: 'Nochmal versuchen',
+    resultCorrect: 'Richtig',
+    resultWrong: 'Falsch',
+    resultTotal: 'Gesamt',
+    btnHome: '🏠 Zurück zum Start',
+    btnRetry: '❌ Falsche wiederholen',
+    btnAgain: '🔄 Nochmal alle',
+    title90: 'Ausgezeichnet!',
+    title75: 'Gut gemacht!',
+    title50: 'Weiter üben!',
+    title0: 'Nicht aufgeben!',
+    searchPlaceholder: 'Frage suchen...',
+    filterAll: 'Alle',
+    answerLabel: '✓ Richtige Antwort',
+    cheatBrowseLabel: '⚡ Merkhilfe',
+    tapHint: 'Tippen zum Anzeigen ▾',
+    noWrong: 'Keine falschen Antworten gespeichert!',
+  },
+  en: {
+    heroTitle: 'Living in<br>Germany',
+    heroSub: '310 official citizenship test questions with answers<br>and memory tricks (Cheat Codes) for NRW',
+    installText: 'Install as app for offline access',
+    installBtn: 'Install',
+    statFragen: 'Questions',
+    statGelernt: 'Learned',
+    statNote: 'Last Score',
+    btnAll: '🎯 All 310 Questions',
+    btnBrowse: '📖 Browse All',
+    btnWrong: '❌ Repeat Wrong Answers',
+    btnRandom: '🎲 Random 50',
+    sectionDone: 'learned',
+    sectionFragen: 'questions',
+    questionLabel: 'Question',
+    ofLabel: 'of',
+    cheatLabel: '⚡ Memory Trick',
+    cheatBoxLabel: '⚡ Memory Trick (Cheat Code)',
+    correctFb: '✓ Correct!',
+    wrongFb: '✗ Wrong answer',
+    correctAnswer: 'Correct answer:',
+    nextBtn: 'Next →',
+    resultSub: 'Your result:',
+    resultPassed: 'Passed!',
+    resultFail: 'Not yet passed',
+    resultTryAgain: 'Try again',
+    resultCorrect: 'Correct',
+    resultWrong: 'Wrong',
+    resultTotal: 'Total',
+    btnHome: '🏠 Back to Home',
+    btnRetry: '❌ Repeat Wrong Answers',
+    btnAgain: '🔄 All Questions Again',
+    title90: 'Excellent!',
+    title75: 'Well done!',
+    title50: 'Keep practising!',
+    title0: "Don't give up!",
+    searchPlaceholder: 'Search question...',
+    filterAll: 'All',
+    answerLabel: '✓ Correct Answer',
+    cheatBrowseLabel: '⚡ Memory Trick',
+    tapHint: 'Tap to reveal ▾',
+    noWrong: 'No wrong answers saved yet!',
+  }
+};
+
+const sectionNamesEN = [
+  'Living in a Democracy',
+  'History & Responsibility',
+  'People & Society',
+  'State & Society',
+  'Everyday Life',
+  'NRW Specific'
+];
+
+function t(key) {
+  return (i18n[currentLang] && i18n[currentLang][key]) || (i18n['de'][key]) || key;
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  localStorage.setItem('lang', lang);
+  document.getElementById('btn-de').classList.toggle('active', lang === 'de');
+  document.getElementById('btn-en').classList.toggle('active', lang === 'en');
+  applyLangToStaticElements();
+  renderHome();
+}
+
+function applyLangToStaticElements() {
+  // Home
+  const heroTitle = document.querySelector('.hero-title');
+  if (heroTitle) heroTitle.innerHTML = t('heroTitle');
+  const heroSub = document.querySelector('.hero-sub');
+  if (heroSub) heroSub.innerHTML = t('heroSub');
+  const installText = document.querySelector('.install-text');
+  if (installText) installText.textContent = t('installText');
+  const installBtn = document.querySelector('.install-btn');
+  if (installBtn) installBtn.textContent = t('installBtn');
+  const statLabels = document.querySelectorAll('.stat-label');
+  if (statLabels[0]) statLabels[0].textContent = t('statFragen');
+  if (statLabels[1]) statLabels[1].textContent = t('statGelernt');
+  if (statLabels[2]) statLabels[2].textContent = t('statNote');
+  const allBtns = document.querySelectorAll('.action-btns button');
+  if (allBtns[0]) allBtns[0].innerHTML = t('btnAll');
+  if (allBtns[1]) allBtns[1].innerHTML = t('btnBrowse');
+  if (allBtns[2]) allBtns[2].innerHTML = t('btnWrong');
+  if (allBtns[3]) allBtns[3].innerHTML = t('btnRandom');
+  // Quiz
+  const btnCheat = document.getElementById('btn-cheat');
+  if (btnCheat) btnCheat.textContent = t('cheatLabel');
+  const btnNext = document.getElementById('btn-next');
+  if (btnNext) btnNext.textContent = t('nextBtn');
+  const cheatLabelEl = document.querySelector('.cheat-label');
+  if (cheatLabelEl) cheatLabelEl.textContent = t('cheatBoxLabel');
+  // Results
+  const resLabels = document.querySelectorAll('.result-stat-label');
+  if (resLabels[0]) resLabels[0].textContent = t('resultCorrect');
+  if (resLabels[1]) resLabels[1].textContent = t('resultWrong');
+  if (resLabels[2]) resLabels[2].textContent = t('resultTotal');
+  const resultSub = document.getElementById('result-sub');
+  if (resultSub) resultSub.textContent = t('resultSub');
+  const resActions = document.querySelectorAll('.result-actions button');
+  if (resActions[0]) resActions[0].innerHTML = t('btnHome');
+  if (resActions[1]) resActions[1].innerHTML = t('btnRetry');
+  if (resActions[2]) resActions[2].innerHTML = t('btnAgain');
+  // Browse
+  const searchInput = document.getElementById('browse-search');
+  if (searchInput) searchInput.placeholder = t('searchPlaceholder');
+}
+
+// ==================== STATE ====================
+let quizQuestions = [];
+let currentIdx = 0;
+let score = 0;
+let answered = false;
+let wrongIds = JSON.parse(localStorage.getItem('wrongIds') || '[]');
+let doneIds = JSON.parse(localStorage.getItem('doneIds') || '[]');
+let lastScore = localStorage.getItem('lastScore') || null;
+
+// ==================== HOME ====================
+function renderHome() {
+  // stats
+  document.getElementById('stat-done').textContent = doneIds.length;
+  applyLangToStaticElements();
+  document.getElementById('stat-score').textContent = lastScore ? lastScore + '%' : '–';
+  
+  // sections
+  const sl = document.getElementById('section-list');
+  const icons = ['🏛️','📚','👥','🏢','🌍','🗺️'];
+  sl.innerHTML = SECTIONS.map((sec, i) => {
+    const qs = ALL_QUESTIONS.filter(q => q.section === sec);
+    const done = qs.filter(q => doneIds.includes(q.id)).length;
+    const pct = Math.round((done / qs.length) * 100);
+    const secName = currentLang === 'en' ? sectionNamesEN[i] : sec;
+    return `<button class="section-btn" onclick="startQuiz('section:${i}')">
+      <div class="section-btn-info">
+        <div class="section-icon" style="background:rgba(108,99,255,0.1)">${icons[i]}</div>
+        <div>
+          <div class="section-name">${secName}</div>
+          <div class="section-count">${qs.length} ${t('sectionFragen')} • ${done} ${t('sectionDone')}</div>
+          <div class="section-progress-bar"><div class="section-progress-fill" style="width:${pct}%"></div></div>
+        </div>
+      </div>
+      <div class="section-arrow">›</div>
+    </button>`;
+  }).join('');
+}
+
+// ==================== QUIZ ====================
+function startQuiz(mode) {
+  let qs = [];
+  if (mode === 'all') {
+    qs = [...ALL_QUESTIONS];
+  } else if (mode === 'wrong') {
+    qs = ALL_QUESTIONS.filter(q => wrongIds.includes(q.id));
+    if (qs.length === 0) { alert(t('noWrong')); return; }
+  } else if (mode === 'random50') {
+    const shuffled = [...ALL_QUESTIONS].sort(() => Math.random() - 0.5);
+    qs = shuffled.slice(0, 50);
+  } else if (mode.startsWith('section:')) {
+    const idx = parseInt(mode.split(':')[1]);
+    qs = ALL_QUESTIONS.filter(q => q.section === SECTIONS[idx]);
+  }
+  
+  quizQuestions = qs;
+  currentIdx = 0;
+  score = 0;
+  
+  showView('quiz');
+  renderQuestion();
+}
+
+function renderQuestion() {
+  if (currentIdx >= quizQuestions.length) {
+    showResults();
+    return;
+  }
+  
+  answered = false;
+  const q = quizQuestions[currentIdx];
+  
+  // header
+  document.getElementById('quiz-section-name').textContent = q.section;
+  document.getElementById('quiz-counter').textContent = `${t('questionLabel')} ${currentIdx + 1} ${t('ofLabel')} ${quizQuestions.length}`;
+  document.getElementById('score-pill').textContent = `${score} / ${currentIdx}`;
+  document.getElementById('progress-fill').style.width = `${(currentIdx / quizQuestions.length) * 100}%`;
+  
+  // question
+  document.getElementById('q-num').textContent = `${t('questionLabel')} #${q.id}`;
+  document.getElementById('q-text').textContent = q.q;
+  
+  // options
+  const letters = ['A', 'B', 'C', 'D'];
+  const grid = document.getElementById('options-grid');
+  grid.innerHTML = q.options.map((opt, i) => `
+    <button class="option-btn" onclick="selectAnswer(${i})" id="opt-${i}">
+      <div class="option-letter">${letters[i]}</div>
+      <div>${opt}</div>
+    </button>
+  `).join('');
+  
+  // reset feedback
+  const fb = document.getElementById('feedback-card');
+  fb.className = 'feedback-card';
+  document.getElementById('cheat-box').style.display = 'none';
+  document.getElementById('btn-next').className = 'btn-next';
+  document.getElementById('btn-cheat').className = 'btn-show-cheat';
+}
+
+function selectAnswer(idx) {
+  if (answered) return;
+  answered = true;
+  
+  const q = quizQuestions[currentIdx];
+  const isCorrect = idx === q.answer;
+  
+  // disable all buttons
+  q.options.forEach((_, i) => {
+    const btn = document.getElementById(`opt-${i}`);
+    btn.disabled = true;
+    if (i === q.answer) btn.classList.add('correct');
+    else if (i === idx && !isCorrect) btn.classList.add('selected-wrong');
+    else btn.classList.add('wrong');
+  });
+  
+  // feedback
+  const fb = document.getElementById('feedback-card');
+  const ft = document.getElementById('feedback-title');
+  const fa = document.getElementById('feedback-answer');
+  
+  if (isCorrect) {
+    score++;
+    fb.className = 'feedback-card correct-fb show';
+    ft.className = 'feedback-title green';
+    ft.innerHTML = t('correctFb');
+    fa.textContent = '';
+    // mark as done
+    if (!doneIds.includes(q.id)) doneIds.push(q.id);
+    // remove from wrong
+    wrongIds = wrongIds.filter(id => id !== q.id);
+    fb.classList.add('bounce');
+  } else {
+    fb.className = 'feedback-card wrong-fb show';
+    ft.className = 'feedback-title red';
+    ft.innerHTML = t('wrongFb');
+    fa.innerHTML = `<strong>${t('correctAnswer')}</strong> ${q.options[q.answer]}`;
+    // add to wrong
+    if (!wrongIds.includes(q.id)) wrongIds.push(q.id);
+    fb.classList.add('shake');
+  }
+  
+  document.getElementById('cheat-text').textContent = q.cheat;
+  document.getElementById('btn-next').className = 'btn-next show';
+  document.getElementById('btn-cheat').className = 'btn-show-cheat show';
+  
+  // save progress
+  localStorage.setItem('wrongIds', JSON.stringify(wrongIds));
+  localStorage.setItem('doneIds', JSON.stringify(doneIds));
+}
+
+function showCheat() {
+  document.getElementById('cheat-box').style.display = 'block';
+  document.getElementById('btn-cheat').style.display = 'none';
+}
+
+function nextQuestion() {
+  currentIdx++;
+  renderQuestion();
+}
+
+// ==================== RESULTS ====================
+function showResults() {
+  const total = quizQuestions.length;
+  const pct = Math.round((score / total) * 100);
+  
+  lastScore = pct;
+  localStorage.setItem('lastScore', pct);
+  
+  let emoji = '😊', title = t('title75'), label = t('resultFail');
+  if (pct >= 90) { emoji = '🏆'; title = t('title90'); label = t('resultPassed') + ' 🎉'; }
+  else if (pct >= 75) { emoji = '🎯'; title = t('title75'); label = t('resultPassed'); }
+  else if (pct >= 50) { emoji = '📚'; title = t('title50'); label = t('resultFail'); }
+  else { emoji = '💪'; title = t('title0'); label = t('resultTryAgain'); }
+  
+  document.getElementById('result-emoji').textContent = emoji;
+  document.getElementById('result-title').textContent = title;
+  document.getElementById('result-pct').textContent = pct + '%';
+  document.getElementById('result-label').textContent = label;
+  applyLangToStaticElements();
+  document.getElementById('r-correct').textContent = score;
+  document.getElementById('r-wrong').textContent = total - score;
+  document.getElementById('r-total').textContent = total;
+  
+  showView('results');
+}
+
+function retryWrong() {
+  startQuiz('wrong');
+}
+
+// ==================== BROWSE ====================
+function showBrowse() {
+  showView('browse');
+  renderBrowse('all');
+  
+  // filter tabs
+  const tabs = document.getElementById('filter-tabs');
+  tabs.innerHTML = ['__all__', ...SECTIONS].map((s, i) => {
+    const label = i === 0 ? t('filterAll') : (currentLang === 'en' ? sectionNamesEN[i-1].split(' ')[0] : s.split(' ')[0]);
+    const val = i === 0 ? 'all' : s;
+    return '<button class="filter-tab ' + (i===0?'active':'') + '" onclick="setBrowseFilter(\'' + val + '\', this)">' + label + '</button>';
+  }).join('');
+}
+
+let browseFilter = 'all';
+
+function setBrowseFilter(filter, el) {
+  browseFilter = filter;
+  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  filterBrowse();
+}
+
+function filterBrowse() {
+  const search = document.getElementById('browse-search').value.toLowerCase();
+  let qs = ALL_QUESTIONS;
+  if (browseFilter !== 'all') qs = qs.filter(q => q.section === browseFilter);
+  if (search) qs = qs.filter(q => q.q.toLowerCase().includes(search) || q.options.some(o => o.toLowerCase().includes(search)));
+  renderBrowse(qs);
+}
+
+function renderBrowse(qs) {
+  const list = document.getElementById('browse-list');
+  const items = Array.isArray(qs) ? qs : ALL_QUESTIONS;
+  list.innerHTML = items.map(q => `
+    <div class="browse-card" onclick="toggleBrowseCard(this, ${q.id})">
+      <div class="browse-card-top">
+        <div class="browse-q-num">#${q.id}</div>
+        <div class="browse-section-tag">${q.section.split(' ')[0]}</div>
+      </div>
+      <div class="browse-q-text">${q.q}</div>
+      <div class="browse-toggle-hint" style="font-size:0.7rem;color:var(--muted)">${t("tapHint")}</div>
+      <div class="browse-answer" id="ba-${q.id}">
+        <div class="browse-answer-label">${t("answerLabel")}</div>
+        <div class="browse-answer-text">${q.options[q.answer]}</div>
+        <div class="browse-cheat-label">${t("cheatBrowseLabel")}</div>
+        <div class="browse-cheat-text">${q.cheat}</div>
+      </div>
+    </div>
+  `).join('');
+}
+
+function toggleBrowseCard(el, id) {
+  const ans = document.getElementById(`ba-${id}`);
+  ans.classList.toggle('open');
+}
+
+// ==================== NAV ====================
+function showView(view) {
+  ['home', 'quiz', 'results', 'browse'].forEach(v => {
+    const el = document.getElementById(v);
+    if (v === view) {
+      el.style.display = 'flex';
+    } else {
+      el.style.display = 'none';
+    }
+  });
+  window.scrollTo(0, 0);
+}
+
+function goHome() {
+  showView('home');
+  renderHome();
+}
+
+// ==================== PWA / INSTALL ====================
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  document.getElementById('install-banner').style.display = 'flex';
+});
+
+function installApp() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    deferredPrompt.userChoice.then(() => {
+      deferredPrompt = null;
+      document.getElementById('install-banner').style.display = 'none';
+    });
+  }
+}
+
+// ==================== INIT ====================
+document.getElementById('btn-de').classList.toggle('active', currentLang === 'de');
+document.getElementById('btn-en').classList.toggle('active', currentLang === 'en');
+showView('home');
+renderHome();
+
+// Service Worker Registration
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('./sw.js').catch(e => console.log('SW:', e));
+  });
+}
+</script>
+</body>
+</html>
