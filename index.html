@@ -36,26 +36,26 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
-  html, body { height: 100%; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
   body {
     font-family: 'Space Grotesk', sans-serif;
     background: var(--bg);
     color: var(--text);
-    height: 100vh;
-    overflow: hidden; /* keep page-level scrollbar hidden; containers scroll instead */
+    min-height: 100vh;
+    overflow-x: hidden;
   }
 
   /* SPLASH / HOME */
   #home {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 1.25rem 1rem; /* slightly reduced padding to avoid overflow */
+    padding: 2rem 1.5rem;
     position: relative;
-    overflow: auto; /* allow internal scrolling when needed */
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
   }
 
   .bg-orb {
@@ -100,17 +100,14 @@
   .hero-badge span { font-size: 16px; }
 
   h1.hero-title {
-    font-size: clamp(1.5rem, 4vw, 2.2rem);
+    font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 700;
-    line-height: 1.05;
-    margin-bottom: 0.25rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
     background: linear-gradient(135deg, #e8e8ff 0%, #a09bff 50%, #ff6584 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    white-space: nowrap; /* keep the title on a single line */
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
 
   .hero-sub {
@@ -806,8 +803,8 @@
 
     <div class="hero-badge"><span>🇩🇪</span> NRW Edition</div>
 
-    <h1 class="hero-title">Leben in Deutschland</h1>
-    <p class="hero-sub">310 offizielle Prüfungsfragen mit Antworten und Merkhilfen (Cheat Codes) für NRW</p>
+    <h1 class="hero-title">Leben in<br>Deutschland</h1>
+    <p class="hero-sub">310 offizielle Prüfungsfragen mit Antworten<br>und Merkhilfen (Cheat Codes) für NRW</p>
 
     <div id="install-banner" class="install-banner" style="display:none">
       <div class="install-icon">📲</div>
@@ -1261,8 +1258,8 @@ let currentLang = localStorage.getItem('lang') || 'de';
 
 const i18n = {
   de: {
-    heroTitle: 'Leben in Deutschland',
-    heroSub: '310 offizielle Prüfungsfragen mit Antworten und Merkhilfen (Cheat Codes) für NRW',
+    heroTitle: 'Leben in<br>Deutschland',
+    heroSub: '310 offizielle Prüfungsfragen mit Antworten<br>und Merkhilfen (Cheat Codes) für NRW',
     installText: 'Als App installieren für Offline-Zugriff',
     installBtn: 'Installieren',
     statFragen: 'Fragen',
@@ -1304,8 +1301,8 @@ const i18n = {
     noWrong: 'Keine falschen Antworten gespeichert!',
   },
   en: {
-    heroTitle: 'Living in Germany',
-    heroSub: '310 official citizenship test questions with answers and memory tricks (Cheat Codes) for NRW',
+    heroTitle: 'Living in<br>Germany',
+    heroSub: '310 official citizenship test questions with answers<br>and memory tricks (Cheat Codes) for NRW',
     installText: 'Install as app for offline access',
     installBtn: 'Install',
     statFragen: 'Questions',
