@@ -716,6 +716,22 @@
     line-height: 1;
   }
 
+  /* Ensure language toggle doesn't cover install banner on small screens */
+  @media (max-width: 520px) {
+    .lang-toggle {
+      top: auto;
+      right: 16px;
+      bottom: 16px; /* move to bottom-right on mobile */
+      padding: 4px;
+      gap: 6px;
+      z-index: 10000;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    }
+    .lang-btn { padding: 6px 10px; font-size: 0.72rem; }
+    /* Ensure install banner can appear above the toggle when shown */
+    #install-banner { position: relative; z-index: 10001; }
+  }
+
   /* TEXT-TO-SPEECH BUTTONS */
   .tts-btn, .tts-inline {
     background: transparent;
