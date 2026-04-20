@@ -1463,10 +1463,23 @@ function startQuiz(mode) {
     qs = ALL_QUESTIONS.filter(q => q.section === SECTIONS[idx]);
   }
   
-  quizQuestions = qs;
+  // create per-session copies of questions and shuffle options
+  quizQuestions = qs.map(q => ({ ...q }));
+  // shuffle options for each question so correct answer moves position
+  quizQuestions.forEach(q => {
+    const mapped = q.options.map((opt, i) => ({ opt, i }));
+    // simple Fisher-Yates shuffle
+    for (let i = mapped.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [mapped[i], mapped[j]] = [mapped[j], mapped[i]];
+    }
+    q.optionsShuffled = mapped.map(m => m.opt);
+    q.shuffledAnswer = mapped.findIndex(m => m.i === q.answer);
+  });
+
   currentIdx = 0;
   score = 0;
-  
+
   showView('quiz');
   renderQuestion();
 }
@@ -1501,21 +1514,21 @@ function renderQuestion() {
   qTts.onclick = (e) => { e.stopPropagation(); speak(q.q); };
   qTextEl.parentNode.appendChild(qTts);
   
-  // options
+  // options (use shuffled options when available)
   const letters = ['A', 'B', 'C', 'D'];
+  const displayOptions = q.optionsShuffled || q.options;
   const grid = document.getElementById('options-grid');
-  grid.innerHTML = q.options.map((opt, i) => `
+  grid.innerHTML = displayOptions.map((opt, i) => `
     <button class="option-btn" onclick="selectAnswer(${i})" id="opt-${i}">
-      <div class="option-letter">${letters[i]}</div>
+      <div class="option-letter">${letters[i] || ''}</div>
       <div>${opt}</div>
     </button>
   `).join('');
 
   // attach small TTS buttons to each option
-  q.options.forEach((opt, i) => {
+  displayOptions.forEach((opt, i) => {
     const optBtn = document.getElementById(`opt-${i}`);
     if (!optBtn) return;
-    // avoid duplicating
     if (optBtn.querySelector('.tts-inline')) return;
     const tbtn = document.createElement('button');
     tbtn.className = 'tts-inline';
@@ -1538,16 +1551,19 @@ function selectAnswer(idx) {
   answered = true;
   
   const q = quizQuestions[currentIdx];
-  const isCorrect = idx === q.answer;
+  const correctIndex = (typeof q.shuffledAnswer !== 'undefined') ? q.shuffledAnswer : q.answer;
+  const isCorrect = idx === correctIndex;
   
   // disable all buttons
-  q.options.forEach((_, i) => {
+  const optsLen = (q.optionsShuffled || q.options).length;
+  for (let i = 0; i < optsLen; i++) {
     const btn = document.getElementById(`opt-${i}`);
+    if (!btn) continue;
     btn.disabled = true;
-    if (i === q.answer) btn.classList.add('correct');
+    if (i === correctIndex) btn.classList.add('correct');
     else if (i === idx && !isCorrect) btn.classList.add('selected-wrong');
     else btn.classList.add('wrong');
-  });
+  }
   
   // feedback
   const fb = document.getElementById('feedback-card');
@@ -1569,7 +1585,8 @@ function selectAnswer(idx) {
     fb.className = 'feedback-card wrong-fb show';
     ft.className = 'feedback-title red';
     ft.innerHTML = t('wrongFb');
-    fa.innerHTML = `<strong>${t('correctAnswer')}</strong> ${q.options[q.answer]}`;
+    const correctText = q.optionsShuffled ? q.optionsShuffled[q.shuffledAnswer] : q.options[q.answer];
+    fa.innerHTML = `<strong>${t('correctAnswer')}</strong> ${correctText}`;
     // add to wrong
     if (!wrongIds.includes(q.id)) wrongIds.push(q.id);
     fb.classList.add('shake');
@@ -1586,7 +1603,8 @@ function selectAnswer(idx) {
     ansT.className = 'tts-inline';
     ansT.title = 'Play correct answer';
     ansT.innerText = '🔊';
-    ansT.onclick = (e) => { e.stopPropagation(); speak(q.options[q.answer]); };
+    const correctText = q.optionsShuffled ? q.optionsShuffled[q.shuffledAnswer] : q.options[q.answer];
+    ansT.onclick = (e) => { e.stopPropagation(); speak(correctText); };
     faEl.appendChild(ansT);
   }
   const cheatTextEl = document.getElementById('cheat-text');
