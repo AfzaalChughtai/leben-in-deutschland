@@ -55,7 +55,8 @@
     justify-content: center;
     padding: 2rem 1.5rem;
     position: relative;
-    overflow: hidden;
+    overflow: auto; /* allow the home container to scroll on small screens */
+    -webkit-overflow-scrolling: touch;
   }
 
   .bg-orb {
