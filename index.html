@@ -1514,7 +1514,15 @@ function renderQuestion() {
   qTts.onclick = (e) => { e.stopPropagation(); speak(q.q); };
   qTextEl.parentNode.appendChild(qTts);
   
-  // options (use shuffled options when available)
+  // Always shuffle options when rendering the question so positions vary on revisit
+  const mapped = q.options.map((opt, i) => ({ opt, i }));
+  for (let i = mapped.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [mapped[i], mapped[j]] = [mapped[j], mapped[i]];
+  }
+  q.optionsShuffled = mapped.map(m => m.opt);
+  q.shuffledAnswer = mapped.findIndex(m => m.i === q.answer);
+
   const letters = ['A', 'B', 'C', 'D'];
   const displayOptions = q.optionsShuffled || q.options;
   const grid = document.getElementById('options-grid');
