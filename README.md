@@ -64,7 +64,8 @@ Just open the live link above — no installation needed.
 
 ```bash
 # 1. Clone this repo
-git clone https://github.com/YOUR-USERNAME/leben-in-deutschland.git
+git clone https://github.com//AfzaalChughtai.github.io/leben-in-deutschland.git
+
 cd leben-in-deutschland
 
 # 2. Make changes if needed
