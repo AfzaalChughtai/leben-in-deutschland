@@ -722,12 +722,18 @@
       bottom: 16px; /* move to bottom-right on mobile */
       padding: 4px;
       gap: 6px;
-      z-index: 10000;
+      z-index: 1000;
       box-shadow: 0 6px 18px rgba(0,0,0,0.35);
     }
     .lang-btn { padding: 6px 10px; font-size: 0.72rem; }
     /* Ensure install banner can appear above the toggle when shown */
     #install-banner { position: relative; z-index: 10001; }
+  }
+
+  /* Make quiz/browse/results scrollable on small screens */
+  #quiz, #browse, #results {
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* TEXT-TO-SPEECH BUTTONS */
@@ -1791,6 +1797,9 @@ function showView(view) {
     }
   });
   window.scrollTo(0, 0);
+  // hide language toggle during quiz so it doesn't block taps on mobile
+  const langToggle = document.getElementById('lang-toggle');
+  if (langToggle) langToggle.style.display = (view === 'quiz') ? 'none' : 'flex';
 }
 
 function goHome() {
