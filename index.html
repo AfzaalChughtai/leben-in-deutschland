@@ -243,12 +243,11 @@
   /* QUIZ VIEW */
   #quiz {
     display: none;
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
     flex-direction: column;
     padding: 0;
-    overflow-y: auto;
-    overflow-x: hidden;
-    -webkit-overflow-scrolling: touch;
+    overflow: hidden;
   }
 
   .quiz-header {
@@ -258,9 +257,30 @@
     display: flex;
     align-items: center;
     gap: 1rem;
+    flex-shrink: 0;
     position: sticky;
     top: 0;
     z-index: 100;
+  }
+
+  .progress-track {
+    position: relative;
+    height: 4px;
+    background: rgba(255,255,255,0.06);
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .quiz-body {
+    flex: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    padding: 1.5rem;
+    padding-bottom: 5rem;
+    max-width: 700px;
+    margin: 0 auto;
+    width: 100%;
   }
   .back-btn {
     background: transparent;
@@ -280,12 +300,6 @@
   .quiz-section-name { font-size: 0.75rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
   .quiz-counter { font-size: 0.85rem; font-weight: 600; color: var(--text); }
 
-  .progress-track {
-    position: relative;
-    height: 4px;
-    background: rgba(255,255,255,0.06);
-    overflow: hidden;
-  }
   .progress-fill {
     position: absolute;
     left: 0; top: 0; bottom: 0;
@@ -302,14 +316,6 @@
     font-family: 'JetBrains Mono', monospace;
     color: #a09bff;
     flex-shrink: 0;
-  }
-
-  .quiz-body {
-    flex: 1;
-    padding: 1.5rem;
-    max-width: 700px;
-    margin: 0 auto;
-    width: 100%;
   }
 
   .question-num {
@@ -563,10 +569,10 @@
   /* BROWSE VIEW */
   #browse {
     display: none;
-    min-height: 100vh;
+    height: 100vh;
+    max-height: 100vh;
     flex-direction: column;
-    overflow-y: auto;
-    overflow-x: hidden;
+    overflow: hidden;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -574,10 +580,12 @@
     background: var(--surface);
     border-bottom: 1px solid var(--border);
     padding: 1rem 1.5rem;
+    flex-shrink: 0;
     position: sticky;
     top: 0;
     z-index: 100;
   }
+
   .browse-top {
     display: flex;
     align-items: center;
@@ -628,7 +636,10 @@
   .browse-list {
     flex: 1;
     overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
     padding: 1rem 1.5rem;
+    padding-bottom: 5rem;
     display: flex;
     flex-direction: column;
     gap: 10px;
