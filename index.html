@@ -38,12 +38,18 @@
 
   * { box-sizing: border-box; margin: 0; padding: 0; }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
     font-family: 'Space Grotesk', sans-serif;
     background: var(--bg);
     color: var(--text);
     min-height: 100vh;
     overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
   }
 
   /* SPLASH / HOME */
@@ -52,10 +58,11 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem 1.5rem;
     position: relative;
-    overflow: auto; /* allow the home container to scroll on small screens */
+    overflow-y: auto;
+    overflow-x: hidden;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -239,6 +246,9 @@
     min-height: 100vh;
     flex-direction: column;
     padding: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   .quiz-header {
@@ -447,6 +457,7 @@
   .quiz-actions {
     display: flex;
     gap: 10px;
+    flex-wrap: nowrap;
   }
   .btn-next {
     flex: 1;
@@ -482,15 +493,36 @@
   .btn-show-cheat.show { display: block; }
   .btn-show-cheat:hover { background: rgba(255,215,0,0.15); }
 
+  .btn-prev {
+    display: none;
+    background: transparent;
+    color: var(--text);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1rem 1.2rem;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    flex-shrink: 0;
+  }
+  .btn-prev.show { display: block; animation: fadeIn 0.2s ease; }
+  .btn-prev:hover { background: var(--surface2); border-color: var(--accent); }
+
   /* RESULTS */
   #results {
     display: none;
     min-height: 100vh;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 2rem 1.5rem;
     text-align: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   .result-emoji { font-size: 4rem; margin-bottom: 1rem; }
@@ -533,6 +565,9 @@
     display: none;
     min-height: 100vh;
     flex-direction: column;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
   }
 
   .browse-header {
@@ -730,12 +765,6 @@
     #install-banner { position: relative; z-index: 10001; }
   }
 
-  /* Make quiz/browse/results scrollable on small screens */
-  #quiz, #browse, #results {
-    overflow: auto;
-    -webkit-overflow-scrolling: touch;
-  }
-
   /* TEXT-TO-SPEECH BUTTONS */
   .tts-btn, .tts-inline {
     background: transparent;
@@ -884,6 +913,7 @@
       </div>
     </div>
     <div class="quiz-actions">
+      <button class="btn-prev" id="btn-prev" onclick="prevQuestion()">← Zurück</button>
       <button class="btn-show-cheat" id="btn-cheat" onclick="showCheat()">⚡ Merkhilfe</button>
       <button class="btn-next" id="btn-next" onclick="nextQuestion()">Weiter →</button>
     </div>
@@ -891,7 +921,8 @@
 </div>
 
 <!-- RESULTS -->
-<div id="results" style="display:none; flex-direction:column; align-items:center; justify-content:center; min-height:100vh; padding:2rem;">
+<div id="results" style="display:none; flex-direction:column; align-items:center; justify-content:flex-start; min-height:100vh; padding:2rem;">
+  <div style="height:1rem"></div>
   <div class="result-emoji" id="result-emoji">🎉</div>
   <div class="result-title" id="result-title">Gut gemacht!</div>
   <div class="result-sub" id="result-sub">Dein Ergebnis:</div>
@@ -916,6 +947,7 @@
     <button class="btn-secondary" onclick="retryWrong()">❌ Falsche wiederholen</button>
     <button class="btn-secondary" onclick="startQuiz('all')">🔄 Nochmal alle</button>
   </div>
+  <div style="height:2rem"></div>
 </div>
 
 <!-- BROWSE -->
@@ -1561,6 +1593,9 @@ function renderQuestion() {
   document.getElementById('cheat-box').style.display = 'none';
   document.getElementById('btn-next').className = 'btn-next';
   document.getElementById('btn-cheat').className = 'btn-show-cheat';
+  // show prev button only when not on first question
+  const prevBtn = document.getElementById('btn-prev');
+  prevBtn.className = currentIdx > 0 ? 'btn-prev show' : 'btn-prev';
 }
 
 function selectAnswer(idx) {
@@ -1644,14 +1679,51 @@ function selectAnswer(idx) {
 // ==================== TEXT-TO-SPEECH ====================
 function speak(text) {
   if (!text) return;
+  if (!window.speechSynthesis) return;
   try {
     speechSynthesis.cancel();
   } catch(e) {}
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = currentLang === 'de' ? 'de-DE' : 'en-US';
-  utter.rate = 0.95;
-  utter.pitch = 1;
-  speechSynthesis.speak(utter);
+
+  const doSpeak = () => {
+    const utter = new SpeechSynthesisUtterance(text);
+    const targetLang = currentLang === 'de' ? 'de' : 'en';
+    const voices = speechSynthesis.getVoices();
+    if (voices.length > 0) {
+      const match = voices.find(v => v.lang.startsWith(targetLang));
+      if (match) utter.voice = match;
+    }
+    utter.lang = currentLang === 'de' ? 'de-DE' : 'en-US';
+    utter.rate = 0.95;
+    utter.pitch = 1;
+    speechSynthesis.speak(utter);
+  };
+
+  // Voices may not be loaded yet on web browsers — wait for them
+  const voices = speechSynthesis.getVoices();
+  if (voices.length > 0) {
+    doSpeak();
+  } else {
+    speechSynthesis.onvoiceschanged = () => {
+      speechSynthesis.onvoiceschanged = null;
+      doSpeak();
+    };
+    // Fallback: try anyway after short delay if event never fires
+    setTimeout(() => {
+      if (speechSynthesis.getVoices().length === 0) {
+        doSpeak();
+      }
+    }, 500);
+  }
+}
+
+function prevQuestion() {
+  if (currentIdx <= 0) return;
+  currentIdx--;
+  // Reset answered state so user can re-answer
+  answered = false;
+  // Reset the shuffled state for this question so it re-renders cleanly
+  // but keep optionsShuffled so order stays consistent
+  renderQuestion();
 }
 
 function showCheat() {
@@ -1831,10 +1903,17 @@ document.getElementById('btn-en').classList.toggle('active', currentLang === 'en
 showView('home');
 renderHome();
 
-// Service Worker Registration
+// Service Worker Registration (only on real hosted origins, not previews)
 if ('serviceWorker' in navigator) {
   window.addEventListener('load', () => {
-    navigator.serviceWorker.register('./sw.js').catch(e => console.log('SW:', e));
+    const isLocalOrPreview = location.hostname === 'localhost' ||
+      location.hostname.includes('claudeusercontent.com') ||
+      location.protocol === 'file:';
+    if (!isLocalOrPreview) {
+      navigator.serviceWorker.register('./sw.js')
+        .then(() => console.log('SW registered'))
+        .catch(e => console.log('SW registration skipped:', e.message));
+    }
   });
 }
 </script>
