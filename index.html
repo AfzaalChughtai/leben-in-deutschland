@@ -1361,6 +1361,7 @@ const sectionNamesEN = [
   'People & Society',
   'State & Society',
   'Everyday Life',
+  'Germany General',
   'NRW Specific'
 ];
 
@@ -1437,7 +1438,7 @@ function renderHome() {
   
   // sections
   const sl = document.getElementById('section-list');
-  const icons = ['🏛️','📚','👥','🏢','🌍','🗺️'];
+  const icons = ['🏛️','📚','👥','🏢','🌍','📖','🗺️'];
   sl.innerHTML = SECTIONS.map((sec, i) => {
     const qs = ALL_QUESTIONS.filter(q => q.section === sec);
     const done = qs.filter(q => doneIds.includes(q.id)).length;
